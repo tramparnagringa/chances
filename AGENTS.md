@@ -109,7 +109,7 @@ Qualquer mudança de pontuação ou de copy começa no JSON, nunca no componente
 
 ## Integração com o Kit
 
-**Decisões do Adal (2026-10-07):** Nuxt com servidor na Vercel; **formulário novo** no Kit, só do quiz; segmentação por **3 tags** (uma por faixa). A chave fica em env var e **nunca vai para o cliente**. O site principal expõe o segredo do ConvertKit no navegador (ver AGENTS.md de lá); não repetir isso aqui.
+**Decisões do Adal (2026-10-07):** Nuxt com servidor na Vercel; leads entram no **formulário da newsletter** (6613793, "TNG Inline"; a API do Kit não cria formulários); segmentação por **3 tags** (uma por faixa). A chave fica em env var e **nunca vai para o cliente**. O site principal expõe o segredo do ConvertKit no navegador (ver AGENTS.md de lá); não repetir isso aqui.
 
 `server/api/lead.post.ts` valida tudo (inclusive cada resposta), recalcula a nota e faz, nesta ordem, com a API v4 (`X-Kit-Api-Key`):
 
@@ -122,7 +122,9 @@ Custom fields (precisam existir na conta do Kit; campo desconhecido é ignorado)
 
 - Sem `NUXT_KIT_*` configurado (dev), o endpoint valida, loga e responde `{ ok: true, kit: 'skipped' }`.
 - Falha no Kit: loga e responde 502. O cliente ignora e mostra o resultado mesmo assim.
-- **Não usar o formulário 6613793**: é o da newsletter do site principal.
+- IDs no Kit: formulário `6613793`; tags `24372850` [QUIZ CHANCES] Primeiros passos, `24372851` Em construção, `24372852` Pronto para acelerar.
+- Como o formulário é o da newsletter, o lead do quiz também entra no que estiver ligado a ele (sequência, automações). Se esse formulário tiver double opt-in, a API dispara o email de confirmação.
+- O campo `area` já existia (quiz antigo) e é reaproveitado. Os demais campos do quiz antigo (`tng_score_total` etc.) não são usados.
 - `CONSENT_VERSION` em `composables/useQuiz.ts`: mudou o texto do checkbox LGPD, mude a versão.
 - `NUXT_KIT_API_BASE` existe só para apontar para um mock em teste local.
 
@@ -154,7 +156,8 @@ Rodar `build` ou `typecheck` com `npm run dev` ligado regenera o `.nuxt` e pode 
 
 - URLs reais: Comunidade, Premium, WhatsApp da mentoria, política de privacidade, URL pública do quiz (domínio: este repo se chama `changes.tramparnagringa.com.br`, confirmar se é "chances").
 - Preços não aparecem de propósito.
-- No Kit: criar o formulário do quiz, as 3 tags, os custom fields e as 3 automações (tag → email com o roadmap). Escrever os 3 emails de entrega. Conferir se o formulário novo tem double opt-in desligado (o aceite já é coletado no quiz) ou se a confirmação por email é desejada.
+- No Kit: criar as 3 automações (tag da faixa → email com o roadmap) e escrever os 3 emails de entrega. Tags e campos já existem.
+- Na Vercel: cadastrar as env vars do Kit (ver "Configuração") e fazer redeploy.
 - Analytics: o quiz só faz `dataLayer.push`. Falta decidir quais tags (GA, Meta Pixel etc., como no site principal) entram aqui.
 
 ## Convenções
