@@ -1,0 +1,186 @@
+{
+  "note": "Conteúdo dos 3 roadmaps em PDF, extraído de 'Roadmap por Faixa.dc.html'. Copy final: não reescrever sem pedir ao Adal. 'ctaUrlKey' aponta para runtimeConfig.public.",
+  "items": [
+    {
+      "slug": "primeiros-passos",
+      "name": "Primeiros passos",
+      "range": "nota 0 a 44",
+      "titleAccent": "montar a base",
+      "intro": "Sua nota ficou entre 0 e 44. Isso costuma significar que pelo menos um dos pilares ainda está no começo: pouco tempo na área, um inglês que trava no dia a dia ou um processo seletivo que ainda não começou de verdade.",
+      "blockers": [
+        "Um inglês que funciona pra ler, mas trava na hora de ouvir ou falar.",
+        "Currículo e LinkedIn feitos pro mercado brasileiro, em português.",
+        "Pouca ou nenhuma candidatura pra vaga de fora, porque parece cedo demais."
+      ],
+      "avoid": "sair aplicando em massa. Com a base incompleta, cada candidatura gasta energia e quase não gera retorno, e isso desanima.",
+      "steps": [
+        {
+          "title": "Entenda o caminho inteiro",
+          "actions": [
+            "Entenda como funciona um processo seletivo de fora, do começo ao fim: triagem, recrutador, entrevista técnica, final e proposta.",
+            "Veja no seu resultado qual pilar teve a nota mais baixa.",
+            "Escolha um único pilar pra focar primeiro."
+          ],
+          "done": "consegue explicar em 3 frases onde está e qual é o próximo pilar.",
+          "resource": "Guias de Carreira, na Comunidade."
+        },
+        {
+          "title": "Crie o hábito do inglês",
+          "actions": [
+            "Separe 20 minutos por dia pra ler ou ouvir conteúdo da sua área em inglês.",
+            "Troque um conteúdo em português por um em inglês todo dia.",
+            "Comece a escrever mensagens curtas de trabalho direto em inglês."
+          ],
+          "done": "entende um podcast da sua área em velocidade normal, voltando poucas vezes."
+        },
+        {
+          "title": "Traduza sua carreira pro mercado de fora",
+          "actions": [
+            "Pesquise 10 vagas de fora e veja como o seu cargo se chama nelas.",
+            "Escreva o título e a headline do LinkedIn em inglês usando esse nome.",
+            "Liste 5 resultados da sua carreira com números."
+          ],
+          "done": "seu LinkedIn em inglês está no ar e conta a mesma história do currículo.",
+          "resource": "CV+, no Premium."
+        },
+        {
+          "title": "Faça as primeiras candidaturas",
+          "actions": [
+            "Escolha 5 vagas que combinem com a sua experiência.",
+            "Aplique e anote numa planilha a data, a vaga e o retorno.",
+            "Não espere se sentir pronto. Essas 5 servem pra aprender."
+          ],
+          "done": "tem 5 candidaturas registradas e sabe quantas responderam."
+        }
+      ],
+      "cta": {
+        "eyebrow": "Pra fazer isso com apoio",
+        "title": "Comunidade Trampar na Gringa",
+        "text": "Os Guias de Carreira trazem o passo a passo de cada etapa deste roadmap, e você troca experiências com quem está na mesma fase.",
+        "button": "Entrar na comunidade",
+        "ctaUrlKey": "ctaUrlComunidade"
+      }
+    },
+    {
+      "slug": "em-construcao",
+      "name": "Em construção",
+      "range": "nota 45 a 64",
+      "titleAccent": "sair do improviso",
+      "intro": "Sua nota ficou entre 45 e 64. A base você já tem: experiência que compete e um inglês que se vira. O que falta é constância, um processo que roda toda semana e chega mais longe.",
+      "blockers": [
+        "Candidaturas que não viram entrevista, ou viram poucas.",
+        "A conversa com o recrutador acontece, mas o processo não avança.",
+        "Um inglês que funciona no dia a dia, mas trava sob pressão."
+      ],
+      "avoid": "mudar tudo ao mesmo tempo. Ajuste uma coisa por vez e veja o efeito, senão você não sabe o que funcionou.",
+      "steps": [
+        {
+          "title": "Alinhe currículo e LinkedIn",
+          "actions": [
+            "Reescreva cada bullet como resultado: o que mudou, quanto mudou e pra quem.",
+            "Use o mesmo cargo e as mesmas palavras-chave nos dois.",
+            "Peça pra alguém de fora da sua área ler e dizer o que você faz."
+          ],
+          "done": "currículo e LinkedIn contam a mesma história, em inglês.",
+          "resource": "prompt \"De tarefas para resultados\", na Caixa de Ferramentas, e CV+, no Premium."
+        },
+        {
+          "title": "Monte uma rotina de candidaturas",
+          "actions": [
+            "Defina uma meta semanal de vagas bem escolhidas.",
+            "Registre tudo numa planilha, com o retorno de cada uma.",
+            "A cada 20 candidaturas, revise: que tipo de vaga respondeu?"
+          ],
+          "done": "sabe quantas candidaturas viram conversa e qual tipo de vaga responde mais."
+        },
+        {
+          "title": "Prepare a conversa com o recrutador",
+          "actions": [
+            "Escreva e treine sua apresentação de 1 minuto em inglês.",
+            "Defina sua pretensão salarial antes da conversa.",
+            "Mande follow-up quando o processo esfriar."
+          ],
+          "done": "passa pela primeira conversa sem improvisar.",
+          "resource": "Kit de mensagens de ghosting e follow-up, na Caixa de Ferramentas."
+        },
+        {
+          "title": "Treine a entrevista em inglês",
+          "actions": [
+            "Escolha 5 histórias da sua carreira e escreva cada uma em inglês.",
+            "Treine em voz alta até contar sem ler.",
+            "Grave e ouça de volta."
+          ],
+          "done": "responde \"Tell me about yourself\" com segurança, sem roteiro na frente.",
+          "resource": "Kit de respostas para entrevistas em inglês, na Caixa de Ferramentas."
+        }
+      ],
+      "cta": {
+        "eyebrow": "Pra fazer isso com as ferramentas prontas",
+        "title": "TNG Premium",
+        "text": "Os recursos citados nas etapas estão no Premium: Caixa de Ferramentas com kits, roteiros e prompts, e o CV+. É pra quem já sabe o que fazer e quer executar sozinho.",
+        "button": "Conhecer o Premium",
+        "ctaUrlKey": "ctaUrlPremium"
+      }
+    },
+    {
+      "slug": "pronto-para-acelerar",
+      "name": "Pronto para acelerar",
+      "range": "nota 65 a 100",
+      "titleAccent": "da final à proposta",
+      "intro": "Sua nota ficou entre 65 e 100. Você já tem boa parte do que as empresas de fora pedem: experiência, inglês que funciona e um processo que gera conversas. Nessa fase, o que faz diferença são os detalhes das etapas finais.",
+      "blockers": [
+        "Chegar na final e não ser escolhido, sem saber por quê.",
+        "Entrevistas técnicas em que a resposta está certa, mas a explicação não convence.",
+        "Pouca segurança pra falar de salário e negociar a proposta."
+      ],
+      "avoid": "repetir o mesmo método sozinho. Quando você já chega longe, o que falta dificilmente aparece sem alguém de fora olhando.",
+      "steps": [
+        {
+          "title": "Descubra onde você perde",
+          "actions": [
+            "Liste seus últimos processos e a etapa em que cada um parou.",
+            "Peça feedback sempre que for eliminado.",
+            "Procure o padrão: é técnica, fit com o time ou proposta?"
+          ],
+          "done": "sabe em qual etapa perde mais."
+        },
+        {
+          "title": "Mostre impacto com números",
+          "actions": [
+            "Revise suas histórias: cada uma precisa de contexto, ação e um resultado medido.",
+            "Prepare exemplos de decisões difíceis e de conflitos no time.",
+            "Ajuste as histórias pra cada empresa."
+          ],
+          "done": "cada história principal tem um número e uma lição.",
+          "resource": "Kit de respostas para entrevistas em inglês, na Caixa de Ferramentas."
+        },
+        {
+          "title": "Treine com feedback",
+          "actions": [
+            "Faça simulações de entrevista em inglês com alguém que dê feedback direto.",
+            "Nas técnicas, treine explicar o raciocínio em voz alta enquanto resolve.",
+            "Trabalhe um ponto por simulação."
+          ],
+          "done": "o feedback das simulações para de repetir os mesmos pontos.",
+          "resource": "Programa de Carreira Internacional."
+        },
+        {
+          "title": "Prepare a proposta",
+          "actions": [
+            "Pesquise a faixa salarial do cargo no país da empresa.",
+            "Defina o valor que vai pedir e o seu mínimo antes da conversa.",
+            "Ensaie a negociação em inglês."
+          ],
+          "done": "sabe o que pedir e como responder a uma contraproposta."
+        }
+      ],
+      "cta": {
+        "eyebrow": "Pra fazer isso com prática e feedback",
+        "title": "Programa de Carreira Internacional",
+        "text": "Mentoria pra quem já sabe onde trava: 12 meses de acompanhamento, encontros em inglês com simulação de entrevista e feedback direto no seu currículo, LinkedIn e entrevistas.",
+        "button": "Falar com o time no WhatsApp",
+        "ctaUrlKey": "ctaUrlMentoria"
+      }
+    }
+  ]
+}

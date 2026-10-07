@@ -1,0 +1,23 @@
+# Dependências
+node_modules/
+
+# Build do Nuxt / Nitro / Vercel
+.nuxt
+.output
+.data
+.vercel
+dist
+
+# Env (segredos do Kit ficam aqui, nunca no git)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / SO
+.idea
+.DS_Store
+*.swp

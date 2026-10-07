@@ -1,0 +1,53 @@
+{
+  "note": "Textos das faixas e dos CTAs do resultado. Extraídos de result() em 'Quiz TNG v2 escuro.dc.html'. A ordem segue 'tiers' em quiz-data.json. 'ctaUrlKey' aponta para runtimeConfig.public.",
+  "items": [
+    {
+      "slug": "primeiros-passos",
+      "name": "Primeiros passos",
+      "text": "Você está montando a base. Antes de sair aplicando, vale entender o caminho inteiro, para não gastar energia no lugar errado.",
+      "cta": {
+        "title": "Comunidade Trampar na Gringa",
+        "text": "Para entender o caminho inteiro com calma e trocar experiências com quem está no mesmo processo.",
+        "bullets": [
+          "Guias de Carreira com o passo a passo de cada tema",
+          "Networking com profissionais brasileiros que também miram a gringa",
+          "Eventos ao vivo de vez em quando"
+        ],
+        "button": "Entrar na comunidade",
+        "ctaUrlKey": "ctaUrlComunidade"
+      }
+    },
+    {
+      "slug": "em-construcao",
+      "name": "Em construção",
+      "text": "A base você já tem. O que falta é um jeito organizado de executar toda semana, sem depender de improviso.",
+      "cta": {
+        "title": "TNG Premium",
+        "text": "Para quem já sabe o que precisa fazer e quer ferramentas prontas para executar sozinho.",
+        "bullets": [
+          "Caixa de Ferramentas com kits de mensagens, bancos de respostas, roteiros e checklists",
+          "Prompts e assistentes de IA prontos para cada etapa",
+          "Cursos em vídeo, incluindo o CV+"
+        ],
+        "button": "Conhecer o Premium",
+        "ctaUrlKey": "ctaUrlPremium"
+      }
+    },
+    {
+      "slug": "pronto-para-acelerar",
+      "name": "Pronto para acelerar",
+      "text": "Você já tem boa parte do que as empresas de fora pedem. Agora o que mais pesa é treinar com feedback nos pontos onde ainda trava.",
+      "cta": {
+        "title": "Programa de Carreira Internacional",
+        "text": "Mentoria para quem já sabe onde trava e precisa de prática e feedback para destravar.",
+        "bullets": [
+          "Acompanhamento de 12 meses",
+          "Encontros em inglês com simulação de entrevista",
+          "Feedback direto no seu currículo, LinkedIn e entrevistas"
+        ],
+        "button": "Falar com o time no WhatsApp",
+        "ctaUrlKey": "ctaUrlMentoria"
+      }
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+/* ============================================================
+   Trampar na Gringa — Colors & Type
+   ============================================================
+   The system is editorial, warm, and confident — a personal-
+   newsletter feel for Brazilian tech professionals chasing
+   international remote work. Reach for these tokens first;
+   only stray outside the palette for one-off illustration.
+   ============================================================ */
+
+/* ---- Fonts (Google) ---------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ===== COLORS ============================================ */
+
+  /* Brand — deep aubergine purple, picked from the real logo
+     (#430049). Reads as ambition + voyage abroad; contrasts
+     cleanly with cream paper and pops electric next to lime. */
+  --tng-purple-900: #2A002E;   /* deepest, headers on cream */
+  --tng-purple-700: #430049;   /* PRIMARY — logo bg, buttons, links */
+  --tng-purple-500: #6A1A74;   /* hover / active */
+  --tng-purple-300: #B59BB7;   /* tint — chips, soft fills */
+  --tng-purple-100: #F2E6F4;   /* wash — banners, callouts */
+
+  /* Back-compat aliases — the previous green names still resolve
+     to the new purple values so existing components keep working. */
+  --tng-green-900: var(--tng-purple-900);
+  --tng-green-700: var(--tng-purple-700);
+  --tng-green-500: var(--tng-purple-500);
+  --tng-green-300: var(--tng-purple-300);
+  --tng-green-100: var(--tng-purple-100);
+
+  /* Accent — "ação" (action).
+     An electric lime; used sparingly for highlight strokes,
+     underline marks on serif pull-quotes, peace-sign motif. */
+  --tng-lime: #C9F23D;
+
+  /* Accent — "sol" (sun).
+     A warm passport-stamp coral/orange. PS callouts, badges. */
+  --tng-coral: #FF6B35;
+
+  /* Neutrals — paper & ink.
+     Cream backgrounds, soft warm grays, near-black ink. */
+  --tng-cream:   #F5EFE2;   /* default page background */
+  --tng-bone:    #EFE7D4;   /* card background on cream */
+  --tng-paper:   #FBF8F1;   /* lifted surfaces, modals */
+  --tng-ink:     #141414;   /* primary text on cream */
+  --tng-ink-2:   #3A352E;   /* secondary text */
+  --tng-ink-3:   #6E665B;   /* tertiary / meta */
+  --tng-rule:    #D9D0BD;   /* hairlines on cream */
+  --tng-mute:    #B5AC97;   /* placeholder text */
+
+  /* Inverse — dark surface set (footer, code blocks, deck
+     section headers). */
+  --tng-night:   #0B0F0D;
+  --tng-night-2: #181C19;
+  --tng-night-3: #2A2F2B;
+  --tng-night-ink:  #F2EEDC;
+  --tng-night-ink2: #B7B1A0;
+
+  /* Semantic */
+  --tng-success: #18895A;
+  --tng-warn:    #E8A93B;
+  --tng-danger:  #C8442B;
+  --tng-info:    #2D6CDF;
+
+  /* ===== TYPE ============================================== */
+  --tng-font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --tng-font-body:    'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --tng-font-serif:   'Instrument Serif', ui-serif, Georgia, 'Times New Roman', serif;
+  --tng-font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Roles — these are the ones you should reach for, not raw
+     px sizes. Built on a Major-Third-ish editorial scale. */
+  --tng-text-mega:    clamp(56px, 8vw, 112px);  /* hero, "moeda forte" type */
+  --tng-text-display: clamp(40px, 5vw, 72px);   /* page H1 */
+  --tng-text-h1:      clamp(32px, 3.6vw, 48px); /* section header */
+  --tng-text-h2:      28px;                     /* subsection */
+  --tng-text-h3:      22px;
+  --tng-text-h4:      18px;
+  --tng-text-body:    17px;                     /* default body */
+  --tng-text-small:   15px;
+  --tng-text-meta:    13px;                     /* meta / dates / labels */
+  --tng-text-micro:   12px;
+
+  --tng-lh-tight:  1.05;
+  --tng-lh-snug:   1.2;
+  --tng-lh-normal: 1.55;
+  --tng-lh-prose:  1.65;
+
+  --tng-track-tight:  -0.02em;
+  --tng-track-flat:    0;
+  --tng-track-wide:    0.06em;
+  --tng-track-label:   0.18em; /* eyebrow labels — uppercase */
+
+  /* ===== SHAPE & ELEVATION ================================= */
+  --tng-radius-xs: 4px;
+  --tng-radius-sm: 8px;
+  --tng-radius-md: 14px;
+  --tng-radius-lg: 22px;
+  --tng-radius-pill: 999px;
+
+  --tng-border: 1px solid var(--tng-rule);
+  --tng-border-strong: 1.5px solid var(--tng-ink);
+
+  --tng-shadow-sm: 0 1px 0 rgba(20,20,20,.04), 0 1px 2px rgba(20,20,20,.06);
+  --tng-shadow-md: 0 2px 0 rgba(20,20,20,.04), 0 8px 24px -8px rgba(20,20,20,.18);
+  --tng-shadow-lg: 0 30px 60px -30px rgba(20,20,20,.35);
+  /* Signature "stamp" shadow — flat offset, evokes a printed
+     newsletter or a passport stamp on paper. */
+  --tng-shadow-stamp: 4px 4px 0 var(--tng-ink);
+
+  /* ===== SPACING (4pt) ===================================== */
+  --tng-s-1: 4px;
+  --tng-s-2: 8px;
+  --tng-s-3: 12px;
+  --tng-s-4: 16px;
+  --tng-s-5: 24px;
+  --tng-s-6: 32px;
+  --tng-s-7: 48px;
+  --tng-s-8: 64px;
+  --tng-s-9: 96px;
+  --tng-s-10: 128px;
+
+  /* ===== MOTION ============================================ */
+  --tng-ease: cubic-bezier(.2,.7,.2,1);    /* default */
+  --tng-ease-out: cubic-bezier(.16,1,.3,1); /* lift */
+  --tng-dur-fast: 120ms;
+  --tng-dur-base: 200ms;
+  --tng-dur-slow: 320ms;
+}
+
+/* ============================================================
+   Base + semantic roles
+   ============================================================ */
+body {
+  background: var(--tng-cream);
+  color: var(--tng-ink);
+  font-family: var(--tng-font-body);
+  font-size: var(--tng-text-body);
+  line-height: var(--tng-lh-prose);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-family: var(--tng-font-display);
+  font-size: var(--tng-text-display);
+  line-height: var(--tng-lh-tight);
+  letter-spacing: var(--tng-track-tight);
+  font-weight: 700;
+  color: var(--tng-green-900);
+  text-wrap: balance;
+}
+h2, .h2 {
+  font-family: var(--tng-font-display);
+  font-size: var(--tng-text-h1);
+  line-height: var(--tng-lh-snug);
+  letter-spacing: var(--tng-track-tight);
+  font-weight: 600;
+  color: var(--tng-ink);
+  text-wrap: balance;
+}
+h3, .h3 {
+  font-family: var(--tng-font-display);
+  font-size: var(--tng-text-h2);
+  line-height: var(--tng-lh-snug);
+  font-weight: 600;
+  color: var(--tng-ink);
+}
+h4, .h4 {
+  font-family: var(--tng-font-body);
+  font-size: var(--tng-text-h4);
+  font-weight: 600;
+  letter-spacing: var(--tng-track-flat);
+  color: var(--tng-ink);
+}
+
+p, .p {
+  font-size: var(--tng-text-body);
+  line-height: var(--tng-lh-prose);
+  color: var(--tng-ink-2);
+  text-wrap: pretty;
+}
+
+small, .meta {
+  font-size: var(--tng-text-meta);
+  color: var(--tng-ink-3);
+  letter-spacing: 0.01em;
+}
+
+/* Eyebrow / kicker / TNG-issue label */
+.eyebrow {
+  font-family: var(--tng-font-mono);
+  font-size: var(--tng-text-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--tng-track-label);
+  color: var(--tng-green-700);
+  font-weight: 500;
+}
+
+/* Editorial pull-quote / dollar-amount accent */
+.serif {
+  font-family: var(--tng-font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+code, kbd, samp, pre, .mono {
+  font-family: var(--tng-font-mono);
+  font-size: 0.92em;
+}
+
+a {
+  color: var(--tng-green-700);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--tng-lime);
+  transition: color var(--tng-dur-fast) var(--tng-ease);
+}
+a:hover { color: var(--tng-green-500); text-decoration-color: currentColor; }
+
+hr, .rule {
+  border: 0;
+  border-top: var(--tng-border);
+  margin: var(--tng-s-6) 0;
+}
+
+/* Card archetype */
+.card {
+  background: var(--tng-paper);
+  border: var(--tng-border);
+  border-radius: var(--tng-radius-md);
+  box-shadow: var(--tng-shadow-sm);
+}
+
+/* "Stamp" — flat 2D offset, hard edge */
+.stamp {
+  background: var(--tng-paper);
+  border: var(--tng-border-strong);
+  border-radius: var(--tng-radius-md);
+  box-shadow: var(--tng-shadow-stamp);
+}
+
+::selection { background: var(--tng-lime); color: var(--tng-ink); }

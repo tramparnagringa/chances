@@ -1,0 +1,686 @@
+{
+  "note": "Fonte de verdade da lógica do quiz. Ordem das opções = ordem exibida (pior → melhor nas perguntas que pontuam).",
+  "pillarMax": {
+    "exp": 21,
+    "eng": 102,
+    "proc": 102
+  },
+  "scoring": "score = round(100 * (min(1, exp/21) + min(1, eng/102) + min(1, proc/102)) / 3)",
+  "tiers": [
+    {
+      "name": "Primeiros passos",
+      "min": 0,
+      "max": 44,
+      "cta": "comunidade"
+    },
+    {
+      "name": "Em construção",
+      "min": 45,
+      "max": 64,
+      "cta": "premium"
+    },
+    {
+      "name": "Pronto para acelerar",
+      "min": 65,
+      "max": 100,
+      "cta": "mentoria"
+    }
+  ],
+  "percentileQuantiles": {
+    "note": "Notas (0–1) nos percentis 0,5,10…100 de 8.273 respostas históricas. Interpolar linearmente; resultado limitado a 1–99.",
+    "values": [
+      0.13,
+      0.276,
+      0.329,
+      0.37,
+      0.409,
+      0.44,
+      0.468,
+      0.491,
+      0.51,
+      0.533,
+      0.552,
+      0.572,
+      0.595,
+      0.614,
+      0.637,
+      0.657,
+      0.68,
+      0.706,
+      0.742,
+      0.788,
+      1
+    ],
+    "median": 0.552
+  },
+  "questions": [
+    {
+      "n": 1,
+      "id": "area",
+      "section": "Perfil",
+      "pillar": null,
+      "question": "Qual é a sua área de atuação?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "TI / Desenvolvimento"
+        },
+        {
+          "label": "Dados"
+        },
+        {
+          "label": "Design"
+        },
+        {
+          "label": "Produto"
+        },
+        {
+          "label": "Experiência do Cliente"
+        },
+        {
+          "label": "Vendas"
+        },
+        {
+          "label": "Marketing"
+        },
+        {
+          "label": "Outra área"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "id": "funcao",
+      "section": "Perfil",
+      "pillar": null,
+      "question": "Qual é o seu cargo atual?",
+      "help": null,
+      "type": "text",
+      "placeholder": "ex: Desenvolvedor backend, Product Designer, QA",
+      "options": null
+    },
+    {
+      "n": 3,
+      "id": "exp",
+      "section": "Perfil",
+      "pillar": "exp",
+      "question": "Quantos anos de experiência você tem na área?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Menos de 1 ano ou nenhuma",
+          "points": 2
+        },
+        {
+          "label": "1 a 2 anos",
+          "points": 3
+        },
+        {
+          "label": "3 a 5 anos",
+          "points": 13
+        },
+        {
+          "label": "6 a 9 anos",
+          "points": 21
+        },
+        {
+          "label": "10 anos ou mais",
+          "points": 21
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "id": "nivel",
+      "section": "Inglês",
+      "pillar": "eng",
+      "question": "Como você avalia seu inglês hoje?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Básico",
+          "points": 2
+        },
+        {
+          "label": "Intermediário",
+          "points": 13
+        },
+        {
+          "label": "Avançado ou superior",
+          "points": 21
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "id": "leitura",
+      "section": "Inglês",
+      "pillar": "eng",
+      "question": "Você precisa ler um artigo em inglês. O que acontece?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Abro o tradutor antes de tentar",
+          "points": 2
+        },
+        {
+          "label": "Entendo algumas palavras soltas",
+          "points": 3
+        },
+        {
+          "label": "Textos curtos eu leio tranquilo",
+          "points": 5
+        },
+        {
+          "label": "Leio artigos técnicos da minha área",
+          "points": 8
+        },
+        {
+          "label": "Leio de tudo, até Shakespeare",
+          "points": 13
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "id": "escrita",
+      "section": "Inglês",
+      "pillar": "eng",
+      "question": "Seu chefe pede um email em inglês. Como você faz?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Bate o desespero",
+          "points": 2
+        },
+        {
+          "label": "Peço socorro para o ChatGPT",
+          "points": 3
+        },
+        {
+          "label": "Escrevo e reviso com um corretor",
+          "points": 5
+        },
+        {
+          "label": "Escrevo sozinho, sem ferramentas",
+          "points": 8
+        },
+        {
+          "label": "Escrevo tão bem quanto em português",
+          "points": 13
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "id": "escuta",
+      "section": "Inglês",
+      "pillar": "eng",
+      "question": "Você coloca um podcast em inglês. Quanto entende?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Quase nada sem legenda",
+          "points": 3
+        },
+        {
+          "label": "Só entendo em velocidade reduzida",
+          "points": 5
+        },
+        {
+          "label": "Entendo, mas volto algumas vezes",
+          "points": 8
+        },
+        {
+          "label": "Entendo uns 80 a 90%",
+          "points": 13
+        },
+        {
+          "label": "Entendo tudo, até sotaques e gírias",
+          "points": 21
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "id": "fala",
+      "section": "Inglês",
+      "pillar": "eng",
+      "question": "Um gestor de fora visita a empresa e puxa conversa com você.",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Finjo que estou em reunião",
+          "points": 5
+        },
+        {
+          "label": "Travo e torço para alguém me salvar",
+          "points": 8
+        },
+        {
+          "label": "Respondo, mas peço para repetir",
+          "points": 13
+        },
+        {
+          "label": "Explico o que faço e o impacto disso",
+          "points": 21
+        },
+        {
+          "label": "Converso à vontade sobre qualquer assunto",
+          "points": 34
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "id": "pedra",
+      "section": "Processos seletivos",
+      "pillar": "proc",
+      "question": "Hoje, onde você sente que mais trava?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Ninguém me encontra, parece que eu não existo",
+          "points": 2
+        },
+        {
+          "label": "Não recebo convites para entrevista",
+          "points": 3
+        },
+        {
+          "label": "Falo com o recrutador e o processo para",
+          "points": 5
+        },
+        {
+          "label": "Vou mal nas entrevistas técnicas",
+          "points": 8
+        },
+        {
+          "label": "Chego na etapa final e não sou escolhido",
+          "points": 13
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "id": "passiva",
+      "section": "Processos seletivos",
+      "pillar": "proc",
+      "question": "Recrutadores te procuram no LinkedIn?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Nunca recebi nenhuma mensagem",
+          "points": 2
+        },
+        {
+          "label": "Raramente, a última foi há semanas",
+          "points": 3
+        },
+        {
+          "label": "De vez em quando aparece algo interessante",
+          "points": 5
+        },
+        {
+          "label": "Com frequência, toda semana tem algo",
+          "points": 8
+        },
+        {
+          "label": "Quase todo dia",
+          "points": 13
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "id": "ativa",
+      "section": "Processos seletivos",
+      "pillar": "proc",
+      "question": "Com que frequência você se candidata a vagas?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Uma por mês, ou menos",
+          "points": 2
+        },
+        {
+          "label": "Mais ou menos uma por semana",
+          "points": 5
+        },
+        {
+          "label": "Algumas por semana",
+          "points": 8
+        },
+        {
+          "label": "De 3 a 5 por dia",
+          "points": 13
+        },
+        {
+          "label": "Mais de 10 por dia",
+          "points": 21
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "id": "convites",
+      "section": "Processos seletivos",
+      "pillar": "proc",
+      "question": "De cada 10 candidaturas, o que costuma acontecer?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Nenhuma resposta ou só recusas",
+          "points": 2
+        },
+        {
+          "label": "Uma entrevista, quando muito",
+          "points": 3
+        },
+        {
+          "label": "2 ou 3 conversas com recrutador",
+          "points": 8
+        },
+        {
+          "label": "Umas 5 entrevistas",
+          "points": 13
+        },
+        {
+          "label": "Mais convites do que consigo atender",
+          "points": 21
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "id": "entrevista",
+      "section": "Processos seletivos",
+      "pillar": "proc",
+      "question": "Como você se sai numa entrevista em inglês?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Nunca fiz e prefiro nem pensar",
+          "points": 5
+        },
+        {
+          "label": "Já remarquei por nervosismo",
+          "points": 8
+        },
+        {
+          "label": "Fico nervoso, mas vou até o fim",
+          "points": 13
+        },
+        {
+          "label": "Falo bem da minha experiência",
+          "points": 21
+        },
+        {
+          "label": "Fico tão à vontade quanto em português",
+          "points": 34
+        }
+      ]
+    },
+    {
+      "n": 14,
+      "id": "regime",
+      "section": "Momento atual",
+      "pillar": null,
+      "question": "Como é o seu regime de trabalho hoje?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "100% remoto"
+        },
+        {
+          "label": "Remoto, vou ao escritório quando quero"
+        },
+        {
+          "label": "Presencial 2 a 3x por semana"
+        },
+        {
+          "label": "100% presencial"
+        },
+        {
+          "label": "Não estou trabalhando no momento"
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "id": "renda",
+      "section": "Momento atual",
+      "pillar": null,
+      "question": "Qual é a sua renda mensal hoje?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Menos de R$ 2.500"
+        },
+        {
+          "label": "R$ 2.500 a R$ 5.000"
+        },
+        {
+          "label": "R$ 5.000 a R$ 10.000"
+        },
+        {
+          "label": "R$ 10.000 a R$ 20.000"
+        },
+        {
+          "label": "Mais de R$ 20.000"
+        }
+      ]
+    },
+    {
+      "n": 16,
+      "id": "satisfacao",
+      "section": "Momento atual",
+      "pillar": null,
+      "question": "Como você se sente em relação à sua renda?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Preocupado, sem perspectiva"
+        },
+        {
+          "label": "Mal dá para pagar as contas"
+        },
+        {
+          "label": "Dá para viver, mas pizza só uma vez por mês"
+        },
+        {
+          "label": "Satisfeito, mas quero ganhar mais"
+        },
+        {
+          "label": "Totalmente satisfeito"
+        }
+      ]
+    },
+    {
+      "n": 17,
+      "id": "alvo",
+      "section": "Objetivo",
+      "pillar": null,
+      "question": "Que renda mensal você quer alcançar?",
+      "help": "Valores convertidos para reais.",
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Até R$ 5.000"
+        },
+        {
+          "label": "R$ 5.000 a R$ 10.000"
+        },
+        {
+          "label": "R$ 10.000 a R$ 20.000"
+        },
+        {
+          "label": "R$ 20.000 a R$ 30.000"
+        },
+        {
+          "label": "Mais de R$ 30.000"
+        }
+      ]
+    },
+    {
+      "n": 18,
+      "id": "plano",
+      "section": "Objetivo",
+      "pillar": null,
+      "question": "Como você quer trabalhar para fora?",
+      "help": null,
+      "type": "single_choice",
+      "placeholder": null,
+      "options": [
+        {
+          "label": "Morando no Brasil, em empresa de fora"
+        },
+        {
+          "label": "Me mudando para outro país"
+        }
+      ]
+    }
+  ],
+  "priorities": {
+    "note": "Pegar os 3 itens com menor razão pontos/máximo da pergunta, entre estes ids. Empate: ordem desta lista.",
+    "items": [
+      {
+        "id": "leitura",
+        "title": "Leitura em inglês",
+        "text": "Troque um conteúdo por dia em português pela versão em inglês: documentação, artigos ou newsletters da sua área. Ler um pouco todo dia rende mais que ler muito de vez em quando."
+      },
+      {
+        "id": "escrita",
+        "title": "Escrita em inglês",
+        "text": "Escreva suas mensagens de trabalho direto em inglês e use o corretor só para revisar no final. A meta é parar de escrever em português e traduzir."
+      },
+      {
+        "id": "escuta",
+        "title": "Compreensão auditiva",
+        "text": "Ouça podcasts e palestras da sua área em velocidade normal, com a transcrição aberta. Quando estiver entendendo uns 80%, tire a transcrição."
+      },
+      {
+        "id": "fala",
+        "title": "Inglês falado",
+        "text": "Grave suas respostas para as perguntas que sempre caem (Tell me about yourself, um projeto difícil, por que quer mudar) e ouça de volta. Seu inglês não precisa ser perfeito. Precisa funcionar sob pressão."
+      },
+      {
+        "id": "passiva",
+        "title": "Visibilidade no LinkedIn",
+        "text": "Escreva seu título e sua headline em inglês, com o nome do cargo igual ao das vagas de fora e as palavras-chave da sua área. É assim que o recrutador te encontra na busca."
+      },
+      {
+        "id": "ativa",
+        "title": "Volume de candidaturas",
+        "text": "Defina quantas vagas bem escolhidas você vai aplicar por semana e anote numa planilha. Com poucas candidaturas, você não tem como saber o que ajustar."
+      },
+      {
+        "id": "convites",
+        "title": "Conversão em entrevistas",
+        "text": "Se você aplica e não é chamado, o currículo está te barrando. Reescreva cada bullet como resultado: o que mudou, quanto mudou e para quem."
+      },
+      {
+        "id": "entrevista",
+        "title": "Entrevista em inglês",
+        "text": "Escolha 5 histórias da sua carreira, escreva cada uma em inglês e treine em voz alta até contar sem ler. Quanto mais preparo, menos improviso."
+      }
+    ]
+  },
+  "blockers": {
+    "note": "'Onde você trava': índice = opção escolhida na pergunta 'pedra'.",
+    "items": [
+      {
+        "title": "Os recrutadores não estão te encontrando.",
+        "text": "Antes de aplicar mais, você precisa ser encontrado. Comece pelo LinkedIn: título, headline e palavras-chave em inglês, do jeito que aparecem nas vagas de fora. E o currículo precisa contar a mesma história."
+      },
+      {
+        "title": "Suas candidaturas param na triagem.",
+        "text": "Quando ninguém chama, o problema quase sempre está no currículo: tarefas em vez de resultados, um cargo que não bate com o mercado de fora, ou currículo e LinkedIn dizendo coisas diferentes."
+      },
+      {
+        "title": "O processo para depois da primeira conversa.",
+        "text": "Essa conversa é um filtro. O que pesa é uma apresentação clara de quem você é, uma pretensão salarial bem pensada e um follow-up que mantém o processo andando."
+      },
+      {
+        "title": "As entrevistas técnicas estão te segurando.",
+        "text": "Lá fora, o entrevistador quer ver como você pensa, não só a resposta certa. Treine resolver problemas explicando seu raciocínio em voz alta, em inglês."
+      },
+      {
+        "title": "Você chega na final e não fecha.",
+        "text": "Na final, todo mundo sabe a parte técnica. Ganha quem mostra impacto com números, combina com o time e conversa sobre proposta com segurança."
+      }
+    ]
+  },
+  "pillarTexts": {
+    "note": "Para cada pilar, usar o primeiro item cujo limite (razão 0–1) seja maior que a razão do usuário.",
+    "exp": [
+      {
+        "lessThan": 0.5,
+        "text": "Você ainda tem pouco tempo na área, e as vagas de fora costumam pedir nível pleno para cima. Use esse tempo para ganhar experiência e preparar o inglês ao mesmo tempo."
+      },
+      {
+        "lessThan": null,
+        "text": "Sua experiência já compete com o mercado de fora. O trabalho agora é fazer o currículo e a entrevista mostrarem isso."
+      }
+    ],
+    "eng": [
+      {
+        "lessThan": 0.4,
+        "text": "Hoje o inglês é o que mais te segura. Antes de aplicar em volume, leia e ouça inglês todo dia, nem que seja por 20 minutos."
+      },
+      {
+        "lessThan": 0.7,
+        "text": "Você se vira no inglês, mas trava quando tem pressão. O próximo passo é treinar fala, principalmente respostas de entrevista."
+      },
+      {
+        "lessThan": null,
+        "text": "Seu inglês já funciona. Use isso a seu favor, porque ele vira ponto forte nas entrevistas."
+      }
+    ],
+    "proc": [
+      {
+        "lessThan": 0.35,
+        "text": "Seu processo ainda não gera entrevistas. É aqui que você tem mais a ganhar."
+      },
+      {
+        "lessThan": 0.6,
+        "text": "Você já consegue algumas conversas, mas perde no meio do caminho. Ajustar o posicionamento e preparar as entrevistas faz diferença aqui."
+      },
+      {
+        "lessThan": null,
+        "text": "Seu processo já funciona. O foco agora é transformar etapas finais em propostas."
+      }
+    ]
+  }
+}

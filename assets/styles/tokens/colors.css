@@ -1,0 +1,37 @@
+/* Tokens do handoff (README → "Design Tokens"). Mesmos nomes do site
+   principal (assets/styles/tng-tokens/colors.css) onde existem lá. */
+:root {
+  /* Marca */
+  --tng-purple-900: #2A002E;
+  --tng-purple-700: #430049;
+  --tng-purple-500: #6A1A74;
+  --tng-purple-300: #B59BB7;
+  --tng-purple-100: #F2E6F4;
+
+  /* Acento. Coral fica só no logo. */
+  --tng-lime: #C9F23D;
+  --tng-lime-hover: #D8F76E;
+
+  /* Night (quiz). Não é o --ameixa do site principal: é intencional. */
+  --tng-night: #0B0F0D;
+  --tng-night-2: #181C19;
+  --tng-night-3: #2A2F2B;
+  --tng-night-ink: #F2EEDC;
+  --tng-night-ink2: #B7B1A0;
+  --tng-night-ink3: #8F897A;
+  --tng-night-placeholder: #6E6A5E;
+  --tng-night-error: #F08A6E;
+  --tng-on-purple: #E9DCEB;
+
+  /* Paper (roadmap) */
+  --tng-cream: #F5EFE2;
+  --tng-paper: #FBF8F1;
+  --tng-ink: #141414;
+  --tng-ink-2: #3A352E;
+  --tng-ink-3: #6E665B;
+  --tng-rule: #D9D0BD;
+
+  /* Forma */
+  --tng-radius-field: 8px;
+  --tng-radius-card: 14px;
+}

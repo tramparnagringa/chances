@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Como calculamos suas chances de trampar na gringa</title>
+<link rel="stylesheet" href="_ds/trampar-na-gringa-design-system-547cb304-09e9-4865-9025-fba88ffdd1a6/colors_and_type.css">
+<script src="_ds/trampar-na-gringa-design-system-547cb304-09e9-4865-9025-fba88ffdd1a6/_ds_bundle.js"></script>
+<script src="./doc-page.js"></script>
+<style>
+doc-page:not(:defined) { visibility: hidden; }
+a { color: #430049; text-decoration-color: #C9F23D; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: #6A1A74; text-decoration-color: currentColor; }
+</style>
+</helmet>
+<doc-page margin="0.75in">
+  <div slot="footer" style="display: flex; justify-content: space-between; font-family: var(--tng-font-mono); font-size: 9pt; color: #6E665B; padding-top: 10px; border-top: 1px solid #D9D0BD;">
+    <span>Trampar na Gringa</span>
+    <span>Calcule suas chances de trampar na gringa</span>
+  </div>
+
+  <div style="font-family: var(--tng-font-body); color: #141414; font-size: 15px; line-height: 1.65;">
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 28px;">
+      <img src="assets/logo-circle.svg" alt="" style="width: 34px; height: 34px;">
+      <span style="font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #430049; font-weight: 500;">Guia · Trampar na Gringa</span>
+    </div>
+
+    <h1 style="margin: 0 0 16px; font-family: var(--tng-font-display); font-size: 40px; line-height: 1.05; letter-spacing: -0.025em; font-weight: 700; color: #2A002E;">Como calculamos suas chances de trampar na <span style="font-family: var(--tng-font-serif); font-style: italic; font-weight: 400; color: #430049;">gringa</span></h1>
+    <p style="margin: 0 0 14px; font-size: 17px; color: #3A352E;">Este guia abre a conta do quiz. Você vai ver as 18 perguntas, o que cada resposta vale e como chegamos na nota de 0 a 100.</p>
+    <p style="margin: 0 0 24px; font-size: 17px; color: #3A352E;">Dá pra calcular na mão. Mas o jeito mais rápido é fazer o diagnóstico: a nota aparece na tela na hora, junto com as 3 prioridades do seu caso.</p>
+
+    <div style="break-inside: avoid; background: #430049; color: #F5EFE2; border-radius: 14px; padding: 22px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin: 0 0 40px;">
+      <div style="font-family: var(--tng-font-display); font-weight: 600; font-size: 19px; line-height: 1.3;">Faça o diagnóstico e veja sua nota em 3 minutos.</div>
+      <a href="{{ quizUrl }}" style="display: inline-block; background: #C9F23D; color: #141414; text-decoration: none; font-weight: 600; font-size: 15px; padding: 11px 22px; border-radius: 999px;">Calcular minhas chances →</a>
+    </div>
+
+    <h2 style="margin: 0 0 12px; font-family: var(--tng-font-display); font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;">A conta em 3 pilares</h2>
+    <p style="margin: 0 0 14px;">Das 18 perguntas, 11 valem pontos. Elas se dividem em 3 pilares, e cada pilar vira uma porcentagem:</p>
+    <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin: 0 0 16px;">
+      <thead>
+        <tr>
+          <th style="text-align: left; padding: 8px 0; border-bottom: 1.5px solid #141414; font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;">Pilar</th>
+          <th style="text-align: left; padding: 8px 0; border-bottom: 1.5px solid #141414; font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;">Perguntas</th>
+          <th style="text-align: right; padding: 8px 0; border-bottom: 1.5px solid #141414; font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;">Máximo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding: 9px 0; border-bottom: 1px solid #D9D0BD; font-weight: 600;">Experiência</td><td style="padding: 9px 0; border-bottom: 1px solid #D9D0BD;">1 (anos na área)</td><td style="padding: 9px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono);">21 pontos</td></tr>
+        <tr><td style="padding: 9px 0; border-bottom: 1px solid #D9D0BD; font-weight: 600;">Inglês</td><td style="padding: 9px 0; border-bottom: 1px solid #D9D0BD;">5 (nível, leitura, escrita, escuta, fala)</td><td style="padding: 9px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono);">102 pontos</td></tr>
+        <tr><td style="padding: 9px 0; border-bottom: 1px solid #D9D0BD; font-weight: 600;">Processos seletivos</td><td style="padding: 9px 0; border-bottom: 1px solid #D9D0BD;">5 (onde trava, LinkedIn, candidaturas, retorno, entrevista)</td><td style="padding: 9px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono);">102 pontos</td></tr>
+      </tbody>
+    </table>
+    <p style="margin: 0 0 14px;">A nota final é a <strong>média simples das 3 porcentagens</strong>. Os 3 pilares pesam igual, mesmo que Experiência tenha só uma pergunta.</p>
+
+    <div style="break-inside: avoid; background: #FBF8F1; border: 1px solid #D9D0BD; border-radius: 14px; padding: 20px 22px; margin: 0 0 18px;">
+      <div style="font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #430049; font-weight: 500; margin-bottom: 10px;">Exemplo</div>
+      <div style="font-family: var(--tng-font-mono); font-size: 13px; line-height: 1.9; color: #3A352E;">
+        <div>Experiência: 13 de 21 = 62%</div>
+        <div>Inglês: 52 de 102 = 51%</div>
+        <div>Processos: 29 de 102 = 28%</div>
+        <div style="border-top: 1px solid #D9D0BD; margin-top: 6px; padding-top: 6px; color: #141414; font-weight: 700;">Nota: (62 + 51 + 28) ÷ 3 = 47</div>
+      </div>
+    </div>
+
+    <p style="margin: 0 0 10px;">A nota cai numa de 3 faixas:</p>
+    <ul style="margin: 0 0 14px; padding-left: 20px;">
+      <li><strong>0 a 44 · Primeiros passos.</strong> A base ainda está sendo montada.</li>
+      <li><strong>45 a 64 · Em construção.</strong> A base existe, falta executar com constância.</li>
+      <li><strong>65 a 100 · Pronto para acelerar.</strong> O que mais pesa agora é treino com feedback.</li>
+    </ul>
+    <p style="margin: 0 0 40px;">Pra comparar: entre as mais de 8.000 pessoas que já fizeram o quiz, a nota do meio é <strong>55</strong>. O pilar com a menor nota costuma ser Processos seletivos.</p>
+
+    <h2 style="break-before: page; margin: 0 0 12px; font-family: var(--tng-font-display); font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;">Experiência</h2>
+    <p style="margin: 0 0 18px;">Uma pergunta só, que vale até 21 pontos. A partir de 6 anos você já tem a pontuação máxima, porque é o tempo que as vagas de fora costumam pedir pra nível sênior.</p>
+
+    <div style="break-inside: avoid; margin: 0 0 36px;">
+      <h3 style="margin: 0 0 4px; font-family: var(--tng-font-display); font-size: 17px; font-weight: 600;">Quantos anos de experiência você tem na área?</h3>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <tbody>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Menos de 1 ano ou nenhuma</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">2</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">1 a 2 anos</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">3</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">3 a 5 anos</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">13</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">6 a 9 anos</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">21</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">10 anos ou mais</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">21</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 style="margin: 0 0 12px; font-family: var(--tng-font-display); font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;">Inglês</h2>
+    <p style="margin: 0 0 18px;">Cinco perguntas, até 102 pontos. A fala vale mais que as outras habilidades porque é nela que a entrevista acontece. Repare que a pergunta sobre o nível que você acha que tem vale menos que as situações práticas.</p>
+
+    <div style="break-inside: avoid; margin: 0 0 22px;">
+      <h3 style="margin: 0 0 4px; font-family: var(--tng-font-display); font-size: 17px; font-weight: 600;">Como você avalia seu inglês hoje?</h3>
+      <p style="margin: 0 0 6px; font-size: 13px; color: #6E665B;">Até 21 pontos. É a sua percepção, por isso as próximas perguntas testam situações reais.</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <tbody>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Básico</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">2</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Intermediário</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">13</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Avançado ou superior</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">21</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="break-inside: avoid; margin: 0 0 22px;">
+      <h3 style="margin: 0 0 4px; font-family: var(--tng-font-display); font-size: 17px; font-weight: 600;">Você precisa ler um artigo em inglês. O que acontece?</h3>
+      <p style="margin: 0 0 6px; font-size: 13px; color: #6E665B;">Até 13 pontos. Mede se você consegue estudar e acompanhar sua área em inglês.</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <tbody>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Abro o tradutor antes de tentar</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">2</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Entendo algumas palavras soltas</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">3</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Textos curtos eu leio tranquilo</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">5</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Leio artigos técnicos da minha área</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">8</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Leio de tudo, até Shakespeare</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">13</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="break-inside: avoid; margin: 0 0 22px;">
+      <h3 style="margin: 0 0 4px; font-family: var(--tng-font-display); font-size: 17px; font-weight: 600;">Seu chefe pede um email em inglês. Como você faz?</h3>
+      <p style="margin: 0 0 6px; font-size: 13px; color: #6E665B;">Até 13 pontos. Mede o quanto você depende de ferramenta pra se comunicar por escrito no dia a dia.</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <tbody>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Bate o desespero</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">2</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Peço socorro para o ChatGPT</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">3</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Escrevo e reviso com um corretor</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">5</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Escrevo sozinho, sem ferramentas</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">8</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Escrevo tão bem quanto em português</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">13</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="break-inside: avoid; margin: 0 0 22px;">
+      <h3 style="margin: 0 0 4px; font-family: var(--tng-font-display); font-size: 17px; font-weight: 600;">Você coloca um podcast em inglês. Quanto entende?</h3>
+      <p style="margin: 0 0 6px; font-size: 13px; color: #6E665B;">Até 21 pontos. Numa entrevista ninguém fala devagar pra você, então entender bem pesa mais que ler.</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <tbody>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Quase nada sem legenda</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">3</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Só entendo em velocidade reduzida</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">5</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Entendo, mas volto algumas vezes</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">8</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Entendo uns 80 a 90%</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">13</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Entendo tudo, até sotaques e gírias</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">21</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="break-inside: avoid; margin: 0 0 36px;">
+      <h3 style="margin: 0 0 4px; font-family: var(--tng-font-display); font-size: 17px; font-weight: 600;">Um gestor de fora visita a empresa e puxa conversa com você.</h3>
+      <p style="margin: 0 0 6px; font-size: 13px; color: #6E665B;">Até 34 pontos, a pergunta que mais vale no pilar. Falar sobre o seu trabalho sem preparo é o que a entrevista testa.</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <tbody>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Finjo que estou em reunião</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">5</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Travo e torço para alguém me salvar</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">8</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Respondo, mas peço para repetir</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">13</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Explico o que faço e o impacto disso</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">21</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Converso à vontade sobre qualquer assunto</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">34</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="break-inside: avoid; border: 1.5px solid #141414; box-shadow: 4px 4px 0 #141414; background: #FBF8F1; border-radius: 14px; padding: 20px 22px; margin: 0 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+      <div style="font-size: 15px; color: #3A352E;">Somar tudo isso de cabeça dá trabalho. No diagnóstico, a conta é feita por você.</div>
+      <a href="{{ quizUrl }}" style="font-weight: 600; font-size: 15px;">Ver minha nota →</a>
+    </div>
+
+    <h2 style="break-before: page; margin: 0 0 12px; font-family: var(--tng-font-display); font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;">Processos seletivos</h2>
+    <p style="margin: 0 0 18px;">Cinco perguntas, até 102 pontos. Aqui a gente olha o funil inteiro: ser encontrado, se candidatar, receber retorno e passar na entrevista.</p>
+
+    <div style="break-inside: avoid; margin: 0 0 22px;">
+      <h3 style="margin: 0 0 4px; font-family: var(--tng-font-display); font-size: 17px; font-weight: 600;">Hoje, onde você sente que mais trava?</h3>
+      <p style="margin: 0 0 6px; font-size: 13px; color: #6E665B;">Até 13 pontos. Quanto mais longe no processo você trava, mais avançado você está. Essa resposta também define o bloco "Onde você trava" do resultado.</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <tbody>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Ninguém me encontra, parece que eu não existo</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">2</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Não recebo convites para entrevista</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">3</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Falo com o recrutador e o processo para</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">5</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Vou mal nas entrevistas técnicas</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">8</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Chego na etapa final e não sou escolhido</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">13</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="break-inside: avoid; margin: 0 0 22px;">
+      <h3 style="margin: 0 0 4px; font-family: var(--tng-font-display); font-size: 17px; font-weight: 600;">Recrutadores te procuram no LinkedIn?</h3>
+      <p style="margin: 0 0 6px; font-size: 13px; color: #6E665B;">Até 13 pontos. Mede se o seu perfil aparece quando um recrutador de fora faz uma busca.</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <tbody>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Nunca recebi nenhuma mensagem</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">2</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Raramente, a última foi há semanas</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">3</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">De vez em quando aparece algo interessante</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">5</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Com frequência, toda semana tem algo</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">8</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Quase todo dia</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">13</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="break-inside: avoid; margin: 0 0 22px;">
+      <h3 style="margin: 0 0 4px; font-family: var(--tng-font-display); font-size: 17px; font-weight: 600;">Com que frequência você se candidata a vagas?</h3>
+      <p style="margin: 0 0 6px; font-size: 13px; color: #6E665B;">Até 21 pontos. Sem volume você não tem dado pra saber o que está funcionando.</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <tbody>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Uma por mês, ou menos</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">2</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Mais ou menos uma por semana</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">5</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Algumas por semana</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">8</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">De 3 a 5 por dia</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">13</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Mais de 10 por dia</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">21</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="break-inside: avoid; margin: 0 0 22px;">
+      <h3 style="margin: 0 0 4px; font-family: var(--tng-font-display); font-size: 17px; font-weight: 600;">De cada 10 candidaturas, o que costuma acontecer?</h3>
+      <p style="margin: 0 0 6px; font-size: 13px; color: #6E665B;">Até 21 pontos. Mede se o seu currículo passa da triagem.</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <tbody>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Nenhuma resposta ou só recusas</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">2</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Uma entrevista, quando muito</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">3</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">2 ou 3 conversas com recrutador</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">8</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Umas 5 entrevistas</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">13</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Mais convites do que consigo atender</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">21</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="break-inside: avoid; margin: 0 0 36px;">
+      <h3 style="margin: 0 0 4px; font-family: var(--tng-font-display); font-size: 17px; font-weight: 600;">Como você se sai numa entrevista em inglês?</h3>
+      <p style="margin: 0 0 6px; font-size: 13px; color: #6E665B;">Até 34 pontos, a pergunta que mais vale no pilar. É onde a vaga é decidida.</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <tbody>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Nunca fiz e prefiro nem pensar</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">5</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Já remarquei por nervosismo</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">8</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Fico nervoso, mas vou até o fim</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">13</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Falo bem da minha experiência</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">21</td></tr>
+          <tr><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD;">Fico tão à vontade quanto em português</td><td style="padding: 6px 0; border-bottom: 1px solid #D9D0BD; text-align: right; font-family: var(--tng-font-mono); color: #430049;">34</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 style="margin: 0 0 12px; font-family: var(--tng-font-display); font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;">As perguntas que não valem pontos</h2>
+    <p style="margin: 0 0 12px;">Área, cargo, regime de trabalho, renda atual, como você se sente com a renda, renda que quer alcançar e se quer ficar no Brasil ou se mudar. Essas 7 perguntas não mudam a sua nota.</p>
+    <p style="margin: 0 0 40px;">Elas servem pra dar contexto ao resultado: mostram de onde você parte e aonde quer chegar.</p>
+
+    <h2 style="break-inside: avoid; margin: 0 0 12px; font-family: var(--tng-font-display); font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;">O que o diagnóstico mostra além da nota</h2>
+    <ul style="margin: 0 0 14px; padding-left: 20px;">
+      <li><strong>Onde você trava:</strong> uma leitura do seu principal gargalo, a partir da sua resposta sobre onde mais trava.</li>
+      <li><strong>Suas 3 prioridades:</strong> as 3 habilidades com menor nota entre leitura, escrita, escuta, fala, LinkedIn, candidaturas, retorno e entrevista, cada uma com uma ação prática.</li>
+      <li><strong>Comparação:</strong> em que posição sua nota fica entre as mais de 8.000 pessoas que já fizeram.</li>
+    </ul>
+    <p style="margin: 0 0 24px;">A nota mostra seu preparo hoje. Ela não garante vaga, e muda conforme você trabalha nos pontos fracos. Vale refazer o quiz de tempos em tempos.</p>
+
+    <div style="break-inside: avoid; background: #430049; color: #F5EFE2; border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 14px; margin: 0 0 32px;">
+      <div style="font-family: var(--tng-font-display); font-weight: 700; font-size: 24px; line-height: 1.15; letter-spacing: -0.015em;">Veja sua nota e suas 3 prioridades agora.</div>
+      <div style="font-size: 15px; color: #E9DCEB;">São 3 minutos, e o resultado aparece na tela assim que você termina.</div>
+      <div><a href="{{ quizUrl }}" style="display: inline-block; background: #C9F23D; color: #141414; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 24px; border-radius: 999px;">Calcular minhas chances →</a></div>
+    </div>
+
+    <p style="margin: 0; color: #3A352E;">Boa sorte nos próximos passos!<br>✌️</p>
+  </div>
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;quizUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Quiz TNG v2 escuro.dc.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { quizUrl: this.props.quizUrl || 'Quiz TNG v2 escuro.dc.html' };
+  }
+}
+</script>
+</body>
+</html>

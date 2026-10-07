@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Seu roadmap · Trampar na Gringa</title>
+<link rel="stylesheet" href="_ds/trampar-na-gringa-design-system-547cb304-09e9-4865-9025-fba88ffdd1a6/colors_and_type.css">
+<script src="_ds/trampar-na-gringa-design-system-547cb304-09e9-4865-9025-fba88ffdd1a6/_ds_bundle.js"></script>
+<script src="./doc-page.js"></script>
+<style>
+doc-page:not(:defined) { visibility: hidden; }
+a { color: #430049; text-decoration-color: #C9F23D; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: #6A1A74; text-decoration-color: currentColor; }
+</style>
+</helmet>
+<doc-page margin="0.75in">
+  <div slot="footer" style="display: flex; justify-content: space-between; font-family: var(--tng-font-mono); font-size: 9pt; color: #6E665B; padding-top: 10px; border-top: 1px solid #D9D0BD;">
+    <span>Trampar na Gringa</span>
+    <span>{{ footerLabel }}</span>
+  </div>
+
+  <div style="font-family: var(--tng-font-body); color: #141414; font-size: 15px; line-height: 1.65;">
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 28px;">
+      <img src="assets/logo-circle.svg" alt="" style="width: 34px; height: 34px;">
+      <span style="font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #430049; font-weight: 500;">{{ eyebrow }}</span>
+    </div>
+
+    <sc-if value="{{ isT1 }}" hint-placeholder-val="{{ true }}">
+      <h1 style="margin: 0 0 18px; font-family: var(--tng-font-display); font-size: 40px; line-height: 1.05; letter-spacing: -0.025em; font-weight: 700; color: #2A002E;">Seu roadmap: <span style="font-family: var(--tng-font-serif); font-style: italic; font-weight: 400; color: #430049;">montar a base</span></h1>
+      <p style="margin: 0 0 28px; font-size: 17px; color: #3A352E;">Sua nota ficou entre 0 e 44. Isso costuma significar que pelo menos um dos pilares ainda está no começo: pouco tempo na área, um inglês que trava no dia a dia ou um processo seletivo que ainda não começou de verdade.</p>
+
+      <div style="break-inside: avoid; background: #FBF8F1; border: 1px solid #D9D0BD; border-radius: 14px; padding: 22px 24px; margin: 0 0 18px;">
+        <div style="font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #430049; font-weight: 500; margin-bottom: 10px;">O que costuma travar nessa fase</div>
+        <ul style="margin: 0; padding-left: 20px; color: #3A352E;">
+          <li>Um inglês que funciona pra ler, mas trava na hora de ouvir ou falar.</li>
+          <li>Currículo e LinkedIn feitos pro mercado brasileiro, em português.</li>
+          <li>Pouca ou nenhuma candidatura pra vaga de fora, porque parece cedo demais.</li>
+        </ul>
+      </div>
+      <p style="margin: 0 0 40px; color: #3A352E;"><strong style="color: #141414;">O que evitar agora:</strong> sair aplicando em massa. Com a base incompleta, cada candidatura gasta energia e quase não gera retorno, e isso desanima.</p>
+
+      <h2 style="margin: 0 0 20px; font-family: var(--tng-font-display); font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;">As 4 etapas</h2>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">01</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Entenda o caminho inteiro</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Entenda como funciona um processo seletivo de fora, do começo ao fim: triagem, recrutador, entrevista técnica, final e proposta.</li>
+            <li>Veja no seu resultado qual pilar teve a nota mais baixa.</li>
+            <li>Escolha um único pilar pra focar primeiro.</li>
+          </ul>
+          <p style="margin: 0 0 4px; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> consegue explicar em 3 frases onde está e qual é o próximo pilar.</p>
+          <p style="margin: 0; font-size: 14px; color: #430049;"><strong>Recurso TNG:</strong> Guias de Carreira, na Comunidade.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">02</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Crie o hábito do inglês</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Separe 20 minutos por dia pra ler ou ouvir conteúdo da sua área em inglês.</li>
+            <li>Troque um conteúdo em português por um em inglês todo dia.</li>
+            <li>Comece a escrever mensagens curtas de trabalho direto em inglês.</li>
+          </ul>
+          <p style="margin: 0; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> entende um podcast da sua área em velocidade normal, voltando poucas vezes.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">03</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Traduza sua carreira pro mercado de fora</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Pesquise 10 vagas de fora e veja como o seu cargo se chama nelas.</li>
+            <li>Escreva o título e a headline do LinkedIn em inglês usando esse nome.</li>
+            <li>Liste 5 resultados da sua carreira com números.</li>
+          </ul>
+          <p style="margin: 0 0 4px; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> seu LinkedIn em inglês está no ar e conta a mesma história do currículo.</p>
+          <p style="margin: 0; font-size: 14px; color: #430049;"><strong>Recurso TNG:</strong> CV+, no Premium.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD; border-bottom: 1px solid #D9D0BD; margin-bottom: 40px;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">04</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Faça as primeiras candidaturas</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Escolha 5 vagas que combinem com a sua experiência.</li>
+            <li>Aplique e anote numa planilha a data, a vaga e o retorno.</li>
+            <li>Não espere se sentir pronto. Essas 5 servem pra aprender.</li>
+          </ul>
+          <p style="margin: 0; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> tem 5 candidaturas registradas e sabe quantas responderam.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; border: 1.5px solid #141414; box-shadow: 4px 4px 0 #141414; background: #FBF8F1; border-radius: 14px; padding: 24px 26px; margin: 0 0 40px;">
+        <div style="font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #430049; font-weight: 500; margin-bottom: 8px;">Pra fazer isso com apoio</div>
+        <div style="font-family: var(--tng-font-display); font-weight: 700; font-size: 22px; line-height: 1.2; margin-bottom: 8px;">Comunidade Trampar na Gringa</div>
+        <p style="margin: 0 0 14px; color: #3A352E;">Os Guias de Carreira trazem o passo a passo de cada etapa deste roadmap, e você troca experiências com quem está na mesma fase.</p>
+        <a href="{{ urlComunidade }}" style="font-weight: 600;">Entrar na comunidade →</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isT2 }}" hint-placeholder-val="{{ false }}">
+      <h1 style="margin: 0 0 18px; font-family: var(--tng-font-display); font-size: 40px; line-height: 1.05; letter-spacing: -0.025em; font-weight: 700; color: #2A002E;">Seu roadmap: <span style="font-family: var(--tng-font-serif); font-style: italic; font-weight: 400; color: #430049;">sair do improviso</span></h1>
+      <p style="margin: 0 0 28px; font-size: 17px; color: #3A352E;">Sua nota ficou entre 45 e 64. A base você já tem: experiência que compete e um inglês que se vira. O que falta é constância, um processo que roda toda semana e chega mais longe.</p>
+
+      <div style="break-inside: avoid; background: #FBF8F1; border: 1px solid #D9D0BD; border-radius: 14px; padding: 22px 24px; margin: 0 0 18px;">
+        <div style="font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #430049; font-weight: 500; margin-bottom: 10px;">O que costuma travar nessa fase</div>
+        <ul style="margin: 0; padding-left: 20px; color: #3A352E;">
+          <li>Candidaturas que não viram entrevista, ou viram poucas.</li>
+          <li>A conversa com o recrutador acontece, mas o processo não avança.</li>
+          <li>Um inglês que funciona no dia a dia, mas trava sob pressão.</li>
+        </ul>
+      </div>
+      <p style="margin: 0 0 40px; color: #3A352E;"><strong style="color: #141414;">O que evitar agora:</strong> mudar tudo ao mesmo tempo. Ajuste uma coisa por vez e veja o efeito, senão você não sabe o que funcionou.</p>
+
+      <h2 style="margin: 0 0 20px; font-family: var(--tng-font-display); font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;">As 4 etapas</h2>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">01</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Alinhe currículo e LinkedIn</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Reescreva cada bullet como resultado: o que mudou, quanto mudou e pra quem.</li>
+            <li>Use o mesmo cargo e as mesmas palavras-chave nos dois.</li>
+            <li>Peça pra alguém de fora da sua área ler e dizer o que você faz.</li>
+          </ul>
+          <p style="margin: 0 0 4px; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> currículo e LinkedIn contam a mesma história, em inglês.</p>
+          <p style="margin: 0; font-size: 14px; color: #430049;"><strong>Recurso TNG:</strong> prompt "De tarefas para resultados", na Caixa de Ferramentas, e CV+, no Premium.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">02</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Monte uma rotina de candidaturas</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Defina uma meta semanal de vagas bem escolhidas.</li>
+            <li>Registre tudo numa planilha, com o retorno de cada uma.</li>
+            <li>A cada 20 candidaturas, revise: que tipo de vaga respondeu?</li>
+          </ul>
+          <p style="margin: 0; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> sabe quantas candidaturas viram conversa e qual tipo de vaga responde mais.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">03</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Prepare a conversa com o recrutador</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Escreva e treine sua apresentação de 1 minuto em inglês.</li>
+            <li>Defina sua pretensão salarial antes da conversa.</li>
+            <li>Mande follow-up quando o processo esfriar.</li>
+          </ul>
+          <p style="margin: 0 0 4px; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> passa pela primeira conversa sem improvisar.</p>
+          <p style="margin: 0; font-size: 14px; color: #430049;"><strong>Recurso TNG:</strong> Kit de mensagens de ghosting e follow-up, na Caixa de Ferramentas.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD; border-bottom: 1px solid #D9D0BD; margin-bottom: 40px;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">04</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Treine a entrevista em inglês</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Escolha 5 histórias da sua carreira e escreva cada uma em inglês.</li>
+            <li>Treine em voz alta até contar sem ler.</li>
+            <li>Grave e ouça de volta.</li>
+          </ul>
+          <p style="margin: 0 0 4px; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> responde "Tell me about yourself" com segurança, sem roteiro na frente.</p>
+          <p style="margin: 0; font-size: 14px; color: #430049;"><strong>Recurso TNG:</strong> Kit de respostas para entrevistas em inglês, na Caixa de Ferramentas.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; border: 1.5px solid #141414; box-shadow: 4px 4px 0 #141414; background: #FBF8F1; border-radius: 14px; padding: 24px 26px; margin: 0 0 40px;">
+        <div style="font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #430049; font-weight: 500; margin-bottom: 8px;">Pra fazer isso com as ferramentas prontas</div>
+        <div style="font-family: var(--tng-font-display); font-weight: 700; font-size: 22px; line-height: 1.2; margin-bottom: 8px;">TNG Premium</div>
+        <p style="margin: 0 0 14px; color: #3A352E;">Os recursos citados nas etapas estão no Premium: Caixa de Ferramentas com kits, roteiros e prompts, e o CV+. É pra quem já sabe o que fazer e quer executar sozinho.</p>
+        <a href="{{ urlPremium }}" style="font-weight: 600;">Conhecer o Premium →</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isT3 }}" hint-placeholder-val="{{ false }}">
+      <h1 style="margin: 0 0 18px; font-family: var(--tng-font-display); font-size: 40px; line-height: 1.05; letter-spacing: -0.025em; font-weight: 700; color: #2A002E;">Seu roadmap: <span style="font-family: var(--tng-font-serif); font-style: italic; font-weight: 400; color: #430049;">da final à proposta</span></h1>
+      <p style="margin: 0 0 28px; font-size: 17px; color: #3A352E;">Sua nota ficou entre 65 e 100. Você já tem boa parte do que as empresas de fora pedem: experiência, inglês que funciona e um processo que gera conversas. Nessa fase, o que faz diferença são os detalhes das etapas finais.</p>
+
+      <div style="break-inside: avoid; background: #FBF8F1; border: 1px solid #D9D0BD; border-radius: 14px; padding: 22px 24px; margin: 0 0 18px;">
+        <div style="font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #430049; font-weight: 500; margin-bottom: 10px;">O que costuma travar nessa fase</div>
+        <ul style="margin: 0; padding-left: 20px; color: #3A352E;">
+          <li>Chegar na final e não ser escolhido, sem saber por quê.</li>
+          <li>Entrevistas técnicas em que a resposta está certa, mas a explicação não convence.</li>
+          <li>Pouca segurança pra falar de salário e negociar a proposta.</li>
+        </ul>
+      </div>
+      <p style="margin: 0 0 40px; color: #3A352E;"><strong style="color: #141414;">O que evitar agora:</strong> repetir o mesmo método sozinho. Quando você já chega longe, o que falta dificilmente aparece sem alguém de fora olhando.</p>
+
+      <h2 style="margin: 0 0 20px; font-family: var(--tng-font-display); font-size: 26px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;">As 4 etapas</h2>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">01</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Descubra onde você perde</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Liste seus últimos processos e a etapa em que cada um parou.</li>
+            <li>Peça feedback sempre que for eliminado.</li>
+            <li>Procure o padrão: é técnica, fit com o time ou proposta?</li>
+          </ul>
+          <p style="margin: 0; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> sabe em qual etapa perde mais.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">02</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Mostre impacto com números</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Revise suas histórias: cada uma precisa de contexto, ação e um resultado medido.</li>
+            <li>Prepare exemplos de decisões difíceis e de conflitos no time.</li>
+            <li>Ajuste as histórias pra cada empresa.</li>
+          </ul>
+          <p style="margin: 0 0 4px; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> cada história principal tem um número e uma lição.</p>
+          <p style="margin: 0; font-size: 14px; color: #430049;"><strong>Recurso TNG:</strong> Kit de respostas para entrevistas em inglês, na Caixa de Ferramentas.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">03</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Treine com feedback</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Faça simulações de entrevista em inglês com alguém que dê feedback direto.</li>
+            <li>Nas técnicas, treine explicar o raciocínio em voz alta enquanto resolve.</li>
+            <li>Trabalhe um ponto por simulação.</li>
+          </ul>
+          <p style="margin: 0 0 4px; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> o feedback das simulações para de repetir os mesmos pontos.</p>
+          <p style="margin: 0; font-size: 14px; color: #430049;"><strong>Recurso TNG:</strong> Programa de Carreira Internacional.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-top: 1px solid #D9D0BD; border-bottom: 1px solid #D9D0BD; margin-bottom: 40px;">
+        <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 34px; line-height: 1; color: #B59BB7;">04</div>
+        <div>
+          <h3 style="margin: 0 0 8px; font-family: var(--tng-font-display); font-size: 19px; font-weight: 600;">Prepare a proposta</h3>
+          <ul style="margin: 0 0 10px; padding-left: 18px; color: #3A352E;">
+            <li>Pesquise a faixa salarial do cargo no país da empresa.</li>
+            <li>Defina o valor que vai pedir e o seu mínimo antes da conversa.</li>
+            <li>Ensaie a negociação em inglês.</li>
+          </ul>
+          <p style="margin: 0; font-size: 14px; color: #3A352E;"><strong style="color: #141414;">Você terminou quando</strong> sabe o que pedir e como responder a uma contraproposta.</p>
+        </div>
+      </div>
+
+      <div style="break-inside: avoid; border: 1.5px solid #141414; box-shadow: 4px 4px 0 #141414; background: #FBF8F1; border-radius: 14px; padding: 24px 26px; margin: 0 0 40px;">
+        <div style="font-family: var(--tng-font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #430049; font-weight: 500; margin-bottom: 8px;">Pra fazer isso com prática e feedback</div>
+        <div style="font-family: var(--tng-font-display); font-weight: 700; font-size: 22px; line-height: 1.2; margin-bottom: 8px;">Programa de Carreira Internacional</div>
+        <p style="margin: 0 0 14px; color: #3A352E;">Mentoria pra quem já sabe onde trava: 12 meses de acompanhamento, encontros em inglês com simulação de entrevista e feedback direto no seu currículo, LinkedIn e entrevistas.</p>
+        <a href="{{ urlMentoria }}" style="font-weight: 600;">Falar com o time no WhatsApp →</a>
+      </div>
+    </sc-if>
+
+    <div style="break-inside: avoid; background: #430049; color: #F5EFE2; border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 12px; margin: 0 0 44px;">
+      <div style="font-family: var(--tng-font-display); font-weight: 700; font-size: 22px; line-height: 1.2; letter-spacing: -0.015em;">Refaça o diagnóstico daqui a 30 dias.</div>
+      <div style="font-size: 15px; color: #E9DCEB;">Compare com a nota de hoje. Ela não garante vaga, mas mostra se o seu trabalho está mexendo nos pilares certos.</div>
+      <div><a href="{{ quizUrl }}" style="display: inline-block; background: #C9F23D; color: #141414; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 24px; border-radius: 999px;">Refazer o diagnóstico →</a></div>
+    </div>
+
+    <h2 style="break-before: page; margin: 0 0 12px; font-family: var(--tng-font-display); font-size: 22px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;">Apêndice: como sua nota é calculada</h2>
+    <p style="margin: 0 0 12px; color: #3A352E;">Das 18 perguntas, 11 valem pontos, divididas em 3 pilares: Experiência (1 pergunta, até 21 pontos), Inglês (5 perguntas, até 102) e Processos seletivos (5 perguntas, até 102). Cada pilar vira uma porcentagem, e a nota final é a média simples das três.</p>
+    <p style="margin: 0 0 12px; color: #3A352E;">Os pontos de cada resposta seguem a sequência de Fibonacci (2, 3, 5, 8, 13, 21, 34), em que cada número é a soma dos dois anteriores. Assim, cada degrau vale mais que o anterior: o que separa quem está pronto de quem está quase são os últimos degraus. As perguntas de fala e de entrevista vão até 34 pontos, porque é nelas que a vaga é decidida.</p>
+    <p style="margin: 0 0 32px; color: #3A352E;">Faixas: 0 a 44, Primeiros passos · 45 a 64, Em construção · 65 a 100, Pronto para acelerar. Entre as mais de 8.000 pessoas que já fizeram o quiz, a nota do meio é 55.</p>
+
+    <p style="margin: 0; color: #3A352E;">Boa sorte nos próximos passos!<br>✌️</p>
+  </div>
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;faixa&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Primeiros passos&quot;,&quot;Em construção&quot;,&quot;Pronto para acelerar&quot;],&quot;default&quot;:&quot;Primeiros passos&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Versão&quot;},&quot;quizUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Quiz TNG v2 escuro.dc.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;ctaUrlComunidade&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#comunidade&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;ctaUrlPremium&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#premium&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;ctaUrlMentoria&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#mentoria&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const f = this.props.faixa ?? 'Primeiros passos';
+    const meta = {
+      'Primeiros passos': 'Roadmap · Primeiros passos · nota 0 a 44',
+      'Em construção': 'Roadmap · Em construção · nota 45 a 64',
+      'Pronto para acelerar': 'Roadmap · Pronto para acelerar · nota 65 a 100'
+    };
+    return {
+      isT1: f === 'Primeiros passos', isT2: f === 'Em construção', isT3: f === 'Pronto para acelerar',
+      eyebrow: meta[f], footerLabel: 'Roadmap · ' + f,
+      quizUrl: this.props.quizUrl || 'Quiz TNG v2 escuro.dc.html',
+      urlComunidade: this.props.ctaUrlComunidade || '#comunidade',
+      urlPremium: this.props.ctaUrlPremium || '#premium',
+      urlMentoria: this.props.ctaUrlMentoria || '#mentoria'
+    };
+  }
+}
+</script>
+</body>
+</html>

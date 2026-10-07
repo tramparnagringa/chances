@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Calcule suas chances de trampar na gringa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/trampar-na-gringa-design-system-547cb304-09e9-4865-9025-fba88ffdd1a6/colors_and_type.css">
+<script src="_ds/trampar-na-gringa-design-system-547cb304-09e9-4865-9025-fba88ffdd1a6/_ds_bundle.js"></script>
+<style>
+html, body { margin: 0; padding: 0; background: #0B0F0D; color: #F2EEDC; }
+* { box-sizing: border-box; }
+a { color: #F2EEDC; text-decoration-color: #C9F23D; }
+a:hover { color: #C9F23D; text-decoration-color: currentColor; }
+button { font: inherit; }
+input::placeholder { color: #6E6A5E; }
+</style>
+</helmet>
+<div style="min-height: 100vh; background: var(--tng-night); color: var(--tng-night-ink); font-family: var(--tng-font-body); display: flex; flex-direction: column;">
+
+  <header style="position: sticky; top: 0; z-index: 5; background: rgba(11,15,13,.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--tng-night-3);">
+    <div style="max-width: 720px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 12px;">
+      <img src="assets/logo-circle.svg" alt="Trampar na Gringa" style="width: 32px; height: 32px; display: block;">
+      <div style="font-family: var(--tng-font-display); font-weight: 700; font-size: 16px; letter-spacing: -0.01em; color: var(--tng-night-ink);">Trampar na Gringa</div>
+      <div style="flex: 1;"></div>
+      <sc-if value="{{ isQuiz }}" hint-placeholder-val="{{ false }}">
+        <div style="font-family: var(--tng-font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #8F897A;">{{ q.num }}/{{ total }}</div>
+      </sc-if>
+    </div>
+    <sc-if value="{{ isQuiz }}" hint-placeholder-val="{{ false }}">
+      <div style="height: 3px; background: var(--tng-night-3);">
+        <div style="height: 3px; background: var(--tng-lime); width: {{ progressPct }}%; transition: width 320ms cubic-bezier(.2,.7,.2,1);"></div>
+      </div>
+    </sc-if>
+  </header>
+
+  <main style="flex: 1; width: 100%; max-width: 720px; margin: 0 auto; padding: 0 20px;">
+
+    <sc-if value="{{ isIntro }}" hint-placeholder-val="{{ true }}">
+      <section data-screen-label="01 Entrada" style="padding: clamp(40px, 9vw, 96px) 0 64px; display: flex; flex-direction: column; gap: 28px;">
+        <div style="font-family: var(--tng-font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tng-lime); font-weight: 500;">Quiz gratuito · 3 minutos</div>
+        <h1 style="margin: 0; font-family: var(--tng-font-display); font-size: clamp(38px, 7vw, 64px); line-height: 1.04; letter-spacing: -0.025em; font-weight: 700; color: var(--tng-night-ink); text-wrap: balance;">Calcule suas chances de trampar na <span style="font-family: var(--tng-font-serif); font-style: italic; font-weight: 400; color: var(--tng-lime);">gringa</span></h1>
+        <p style="margin: 0; font-size: clamp(17px, 2.2vw, 19px); line-height: 1.6; color: var(--tng-night-ink2); max-width: 560px; text-wrap: pretty;">Responda 18 perguntas rápidas sobre sua experiência, seu inglês e seus processos seletivos. No final você vê sua nota de 0 a 100, onde está travando e as 3 coisas que mais aumentam suas chances agora.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
+          <div style="background: var(--tng-night-2); border: 1px solid var(--tng-night-3); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px;">
+            <div style="font-family: var(--tng-font-mono); font-size: 12px; color: #8F897A;">01</div>
+            <div style="font-family: var(--tng-font-display); font-weight: 600; font-size: 18px;">Experiência</div>
+            <div style="font-size: 15px; line-height: 1.5; color: var(--tng-night-ink2);">Quanto tempo você tem na área.</div>
+          </div>
+          <div style="background: var(--tng-night-2); border: 1px solid var(--tng-night-3); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px;">
+            <div style="font-family: var(--tng-font-mono); font-size: 12px; color: #8F897A;">02</div>
+            <div style="font-family: var(--tng-font-display); font-weight: 600; font-size: 18px;">Inglês</div>
+            <div style="font-size: 15px; line-height: 1.5; color: var(--tng-night-ink2);">Ler, escrever, ouvir e falar.</div>
+          </div>
+          <div style="background: var(--tng-night-2); border: 1px solid var(--tng-night-3); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px;">
+            <div style="font-family: var(--tng-font-mono); font-size: 12px; color: #8F897A;">03</div>
+            <div style="font-family: var(--tng-font-display); font-weight: 600; font-size: 18px;">Processos seletivos</div>
+            <div style="font-size: 15px; line-height: 1.5; color: var(--tng-night-ink2);">Ser encontrado, se candidatar e passar nas entrevistas.</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px; padding-top: 8px;">
+          <button onClick="{{ start }}" style="appearance: none; border: 0; cursor: pointer; background: var(--tng-lime); color: var(--tng-ink); font-weight: 600; font-size: 17px; padding: 16px 30px; border-radius: 999px; min-height: 52px; transition: background 120ms;" style-hover="background: #D8F76E;" style-active="transform: translateY(1px);">Calcular minhas chances →</button>
+          <div style="font-size: 14px; color: #8F897A;">Mais de 8.000 profissionais já fizeram.</div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isQuiz }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="02 Perguntas" style="padding: clamp(28px, 6vw, 64px) 0 64px; display: flex; flex-direction: column; gap: 24px;">
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <span style="font-family: var(--tng-font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tng-lime); font-weight: 500;">{{ q.sec }}</span>
+          <span style="font-family: var(--tng-font-mono); font-size: 12px; color: #8F897A;">· {{ q.secStep }}</span>
+        </div>
+        <h2 style="margin: 0; font-family: var(--tng-font-display); font-size: clamp(26px, 4.6vw, 38px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 600; color: var(--tng-night-ink); text-wrap: balance;">{{ q.q }}</h2>
+        <sc-if value="{{ q.hasHelp }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: -10px 0 0; font-size: 15px; color: #8F897A;">{{ q.help }}</p>
+        </sc-if>
+
+        <sc-if value="{{ q.isChoice }}" hint-placeholder-val="{{ true }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax({{ q.minCol }}, 1fr)); gap: 10px;">
+            <sc-for list="{{ q.options }}" as="o" hint-placeholder-count="5">
+              <button onClick="{{ o.pick }}" style="appearance: none; cursor: pointer; text-align: left; display: flex; align-items: center; gap: 14px; width: 100%; min-height: 60px; padding: 14px 18px; border-radius: 14px; border: 1.5px solid {{ o.border }}; background: {{ o.bg }}; color: {{ o.fg }}; font-size: 16px; line-height: 1.4; transition: transform 120ms, box-shadow 200ms, border-color 120ms;" style-hover="transform: translateY(-2px); box-shadow: 0 2px 0 rgba(20,20,20,.04), 0 8px 24px -8px rgba(20,20,20,.18); border-color: #C9F23D;">
+                <span style="flex: none; width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; font-family: var(--tng-font-mono); font-size: 12px; font-weight: 500; background: {{ o.keyBg }}; color: {{ o.keyFg }};">{{ o.key }}</span>
+                <span style="text-wrap: pretty;">{{ o.label }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ q.isText }}" hint-placeholder-val="{{ false }}">
+          <form onSubmit="{{ submitText }}" style="display: flex; flex-direction: column; gap: 14px;">
+            <input type="text" value="{{ textVal }}" onChange="{{ onText }}" placeholder="{{ q.placeholder }}" autoFocus="{{ true }}" style="width: 100%; height: 56px; padding: 0 16px; font-size: 17px; font-family: var(--tng-font-body); color: var(--tng-night-ink); background: var(--tng-night-2); border: 1.5px solid var(--tng-night-3); border-radius: 8px; outline: none;" style-focus="border-color: #C9F23D; box-shadow: 0 0 0 3px rgba(201,242,61,.25);">
+            <div>
+              <button type="submit" disabled="{{ textEmpty }}" style="appearance: none; border: 0; cursor: pointer; background: var(--tng-lime); color: var(--tng-ink); font-weight: 600; font-size: 16px; padding: 14px 26px; border-radius: 999px; min-height: 48px; opacity: {{ textOpacity }};" style-hover="background: #D8F76E;">Continuar →</button>
+            </div>
+          </form>
+        </sc-if>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 8px;">
+          <button onClick="{{ back }}" style="appearance: none; border: 0; background: transparent; cursor: pointer; color: #8F897A; font-size: 15px; padding: 10px 0; min-height: 44px;" style-hover="color: var(--tng-night-ink);">← Voltar</button>
+          <sc-if value="{{ q.isChoice }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size: 13px; color: var(--tng-mute);">Dica: use as teclas {{ q.keyHint }}</div>
+          </sc-if>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isCapture }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="03 Captura" style="padding: clamp(32px, 7vw, 72px) 0 64px; display: flex; flex-direction: column; gap: 28px;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="font-family: var(--tng-font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tng-lime); font-weight: 500;">Pronto, terminou</div>
+          <h2 style="margin: 0; font-family: var(--tng-font-display); font-size: clamp(30px, 5.4vw, 46px); line-height: 1.08; letter-spacing: -0.025em; font-weight: 700; color: var(--tng-night-ink); text-wrap: balance;">Suas chances estão calculadas.</h2>
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--tng-night-ink2); text-wrap: pretty;">Seu resultado aparece aqui na hora. No email você recebe um roadmap feito pra sua faixa, com as etapas pra subir sua nota. Na tela, você vai ver:</p>
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 16px; color: var(--tng-night-ink2);">
+            <div style="display: flex; gap: 10px;"><span style="color: var(--tng-lime); font-weight: 700;">✓</span><span>Sua nota de 0 a 100 e como ela se compara à de mais de 8.000 profissionais</span></div>
+            <div style="display: flex; gap: 10px;"><span style="color: var(--tng-lime); font-weight: 700;">✓</span><span>Sua nota em experiência, inglês e processos seletivos</span></div>
+            <div style="display: flex; gap: 10px;"><span style="color: var(--tng-lime); font-weight: 700;">✓</span><span>As 3 prioridades que mais aumentam suas chances no seu caso</span></div>
+          </div>
+        </div>
+
+        <form onSubmit="{{ submitLead }}" noValidate="{{ true }}" style="background: var(--tng-night-2); border: 1.5px solid var(--tng-night-3); border-radius: 14px; box-shadow: 4px 4px 0 var(--tng-lime); padding: clamp(20px, 4vw, 32px); display: flex; flex-direction: column; gap: 18px;">
+          <label style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 14px; font-weight: 600; color: var(--tng-night-ink);">Nome</span>
+            <input type="text" autoComplete="given-name" value="{{ lead.nome }}" onChange="{{ onNome }}" placeholder="Como você quer ser chamado" style="width: 100%; height: 52px; padding: 0 14px; font-size: 16px; font-family: var(--tng-font-body); color: var(--tng-night-ink); background: var(--tng-night-2); border: 1.5px solid {{ err.nomeBorder }}; border-radius: 8px; outline: none;" style-focus="border-color: #C9F23D; box-shadow: 0 0 0 3px rgba(201,242,61,.25);">
+            <sc-if value="{{ err.nome }}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; color: #F08A6E;">Conta pra gente seu nome.</span></sc-if>
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 14px; font-weight: 600; color: var(--tng-night-ink);">Email</span>
+            <input type="email" autoComplete="email" inputMode="email" value="{{ lead.email }}" onChange="{{ onEmail }}" placeholder="voce@email.com" style="width: 100%; height: 52px; padding: 0 14px; font-size: 16px; font-family: var(--tng-font-body); color: var(--tng-night-ink); background: var(--tng-night-2); border: 1.5px solid {{ err.emailBorder }}; border-radius: 8px; outline: none;" style-focus="border-color: #C9F23D; box-shadow: 0 0 0 3px rgba(201,242,61,.25);">
+            <sc-if value="{{ err.email }}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; color: #F08A6E;">Confere o email, parece que tem algo errado.</span></sc-if>
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 14px; font-weight: 600; color: var(--tng-night-ink);">WhatsApp</span>
+            <input type="tel" autoComplete="tel" inputMode="tel" value="{{ lead.whats }}" onChange="{{ onWhats }}" placeholder="(11) 91234-5678" style="width: 100%; height: 52px; padding: 0 14px; font-size: 16px; font-family: var(--tng-font-body); color: var(--tng-night-ink); background: var(--tng-night-2); border: 1.5px solid {{ err.whatsBorder }}; border-radius: 8px; outline: none;" style-focus="border-color: #C9F23D; box-shadow: 0 0 0 3px rgba(201,242,61,.25);">
+            <sc-if value="{{ err.whats }}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; color: #F08A6E;">Coloca o número com DDD.</span></sc-if>
+          </label>
+          <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; padding-top: 2px;">
+            <input type="checkbox" checked="{{ lead.consent }}" onChange="{{ onConsent }}" style="flex: none; width: 20px; height: 20px; margin: 2px 0 0; accent-color: #C9F23D;">
+            <span style="font-size: 14px; line-height: 1.5; color: var(--tng-night-ink2);">Aceito receber conteúdos da Trampar na Gringa por email e WhatsApp e concordo com a <a href="{{ privacyUrl }}" target="_blank">Política de Privacidade</a>. Sem spam, e dá para sair quando quiser.</span>
+          </label>
+          <sc-if value="{{ err.consent }}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; color: #F08A6E; margin-top: -10px;">Precisamos do seu aceite pra continuar.</span></sc-if>
+          <button type="submit" style="appearance: none; border: 0; cursor: pointer; background: var(--tng-lime); color: var(--tng-ink); font-weight: 600; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 54px; width: 100%;" style-hover="background: #D8F76E;" style-active="transform: translateY(1px);">{{ submitLabel }}</button>
+        </form>
+        <button onClick="{{ back }}" style="appearance: none; border: 0; background: transparent; cursor: pointer; color: #8F897A; font-size: 15px; padding: 10px 0; min-height: 44px; align-self: flex-start;" style-hover="color: var(--tng-night-ink);">← Revisar respostas</button>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isResult }}" hint-placeholder-val="{{ false }}">
+      <section data-screen-label="04 Resultado" style="padding: clamp(32px, 7vw, 72px) 0 72px; display: flex; flex-direction: column; gap: 40px;">
+
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div style="font-family: var(--tng-font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tng-lime); font-weight: 500;">Seu preparo para trampar na gringa</div>
+          <div style="display: flex; align-items: flex-end; gap: 20px; flex-wrap: wrap;">
+            <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: clamp(88px, 18vw, 144px); line-height: 0.85; letter-spacing: -0.04em; color: var(--tng-lime);">{{ r.score }}</div>
+            <div style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 8px;">
+              <div style="font-family: var(--tng-font-mono); font-size: 13px; color: #8F897A;">de 100</div>
+              <div style="font-family: var(--tng-font-serif); font-style: italic; font-size: clamp(28px, 4.4vw, 38px); line-height: 1; color: var(--tng-night-ink);">{{ r.tierName }}</div>
+            </div>
+          </div>
+          <p style="margin: 0; font-size: 18px; line-height: 1.6; color: var(--tng-night-ink2); max-width: 600px; text-wrap: pretty;">{{ r.greeting }} {{ r.tierText }}</p>
+
+          <div style="background: var(--tng-night-2); border: 1px solid var(--tng-night-3); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="font-size: 15px; line-height: 1.5; color: var(--tng-night-ink2);">Sua nota é maior que a de <strong style="color: var(--tng-night-ink);">{{ r.percentile }}%</strong> das mais de 8.000 pessoas que fizeram o quiz. Ela mostra seu preparo hoje, não garante vaga.</div>
+            <div style="position: relative; height: 34px;">
+              <div style="position: absolute; left: 0; right: 0; top: 14px; height: 6px; border-radius: 999px; background: linear-gradient(90deg, #2A2F2B, #6A1A74 55%, #C9F23D);"></div>
+              <div style="position: absolute; top: 8px; left: {{ r.medianPos }}%; width: 2px; height: 18px; background: #8F897A;"></div>
+              <div style="position: absolute; top: 4px; left: {{ r.score }}%; width: 26px; height: 26px; margin-left: -13px; border-radius: 999px; background: var(--tng-lime); border: 2px solid var(--tng-night);"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: var(--tng-font-mono); font-size: 12px; color: #8F897A;">
+              <span>0</span><span>mediana {{ r.median }}</span><span>100</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <h3 style="margin: 0; font-family: var(--tng-font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.01em;">Sua nota em cada pilar</h3>
+          <sc-for list="{{ r.dims }}" as="d" hint-placeholder-count="3">
+            <div style="background: var(--tng-night-2); border: 1px solid var(--tng-night-3); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                <div style="font-family: var(--tng-font-display); font-weight: 600; font-size: 19px;">{{ d.label }}</div>
+                <div style="font-family: var(--tng-font-mono); font-size: 15px; font-weight: 500; color: var(--tng-lime);">{{ d.pct }}%</div>
+              </div>
+              <div style="height: 8px; border-radius: 999px; background: var(--tng-night-3); overflow: hidden;">
+                <div style="height: 8px; border-radius: 999px; background: var(--tng-lime); width: {{ d.pct }}%;"></div>
+              </div>
+              <div style="font-size: 15px; line-height: 1.55; color: var(--tng-night-ink2); text-wrap: pretty;">{{ d.text }}</div>
+              <sc-if value="{{ d.hasSubs }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px;">
+                  <sc-for list="{{ d.subs }}" as="s" hint-placeholder-count="4">
+                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; padding: 5px 10px; border-radius: 999px; background: {{ s.bg }}; color: {{ s.fg }};">{{ s.label }} <span style="font-family: var(--tng-font-mono); font-size: 12px;">{{ s.pct }}%</span></span>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="background: var(--tng-purple-700); color: var(--tng-cream); border-radius: 14px; padding: clamp(22px, 4vw, 32px); display: flex; flex-direction: column; gap: 12px;">
+          <div style="font-family: var(--tng-font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tng-lime);">Onde você trava</div>
+          <div style="font-family: var(--tng-font-display); font-weight: 600; font-size: clamp(21px, 3.4vw, 26px); line-height: 1.25; letter-spacing: -0.01em; text-wrap: balance;">{{ r.blockTitle }}</div>
+          <div style="font-size: 16px; line-height: 1.6; color: #E9DCEB; text-wrap: pretty;">{{ r.blockText }}</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <h3 style="margin: 0; font-family: var(--tng-font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.01em;">Suas 3 prioridades</h3>
+          <p style="margin: -6px 0 0; font-size: 15px; color: #8F897A;">Os pontos com menor nota nas suas respostas, em ordem.</p>
+          <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--tng-night-3);">
+            <sc-for list="{{ r.priorities }}" as="p" hint-placeholder-count="3">
+              <div style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 20px 0; border-bottom: 1px solid var(--tng-night-3);">
+                <div style="font-family: var(--tng-font-display); font-weight: 800; font-size: 30px; line-height: 1; color: var(--tng-purple-300);">{{ p.n }}</div>
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <div style="font-family: var(--tng-font-display); font-weight: 600; font-size: 18px;">{{ p.title }}</div>
+                  <div style="font-size: 15px; line-height: 1.6; color: var(--tng-night-ink2); text-wrap: pretty;">{{ p.text }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; color: #8F897A;">
+          <span><span style="font-family: var(--tng-font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;">Hoje</span> · {{ r.today }}</span>
+          <span><span style="font-family: var(--tng-font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;">Meta</span> · {{ r.goal }}</span>
+        </div>
+
+        <div style="background: var(--tng-night-2); border: 1.5px solid var(--tng-night-3); border-radius: 14px; box-shadow: 4px 4px 0 var(--tng-lime); padding: clamp(22px, 4vw, 36px); display: flex; flex-direction: column; gap: 14px;">
+          <div style="font-family: var(--tng-font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tng-lime); font-weight: 500;">Próximo passo pra você</div>
+          <div style="font-family: var(--tng-font-display); font-weight: 700; font-size: clamp(24px, 4vw, 32px); line-height: 1.12; letter-spacing: -0.02em; color: var(--tng-night-ink); text-wrap: balance;">{{ r.cta.title }}</div>
+          <div style="font-size: 16px; line-height: 1.6; color: var(--tng-night-ink2); text-wrap: pretty;">{{ r.cta.text }}</div>
+          <div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px; color: var(--tng-night-ink2);">
+            <sc-for list="{{ r.cta.bullets }}" as="b" hint-placeholder-count="3">
+              <div style="display: flex; gap: 10px;"><span style="color: var(--tng-lime); font-weight: 700;">✓</span><span>{{ b }}</span></div>
+            </sc-for>
+          </div>
+          <div style="padding-top: 6px;">
+            <a href="{{ r.cta.url }}" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none; background: var(--tng-lime); color: var(--tng-ink); font-weight: 600; font-size: 17px; padding: 15px 28px; border-radius: 999px; min-height: 52px; gap: 8px;" style-hover="background: #D8F76E; color: var(--tng-ink);"><span>{{ r.cta.button }}</span><span>→</span></a>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding-top: 8px;">
+          <p style="margin: 0; font-size: 16px; color: var(--tng-night-ink2);">Boa sorte nos próximos passos!<br>✌️</p>
+          <button onClick="{{ restart }}" style="appearance: none; border: 0; background: transparent; cursor: pointer; color: #8F897A; font-size: 15px; padding: 10px 0; min-height: 44px; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: var(--tng-night-ink);">Refazer o quiz</button>
+        </div>
+      </section>
+    </sc-if>
+  </main>
+
+  <footer style="border-top: 1px solid var(--tng-night-3);">
+    <div style="max-width: 720px; margin: 0 auto; padding: 18px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 13px; color: #8F897A;">
+      <span>© Trampar na Gringa</span>
+      <a href="{{ privacyUrl }}" target="_blank" style="color: #8F897A;">Política de Privacidade</a>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startAt&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;intro&quot;,&quot;quiz&quot;,&quot;captura&quot;,&quot;resultado&quot;],&quot;default&quot;:&quot;intro&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pré-visualização&quot;},&quot;demoProfile&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;baixo&quot;,&quot;medio&quot;,&quot;alto&quot;],&quot;default&quot;:&quot;medio&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pré-visualização&quot;},&quot;webhookUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Integração&quot;},&quot;ctaUrlComunidade&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#comunidade&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links de CTA&quot;},&quot;ctaUrlPremium&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#premium&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links de CTA&quot;},&quot;ctaUrlMentoria&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#mentoria&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links de CTA&quot;},&quot;privacyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#privacidade&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links de CTA&quot;}}">
+const Q = [
+  { id: 'area', sec: 'Perfil', q: "Qual é a sua área de atuação?", opts: [["TI / Desenvolvimento"], ["Dados"], ["Design"], ["Produto"], ["Experiência do Cliente"], ["Vendas"], ["Marketing"], ["Outra área"]] },
+  { id: 'funcao', sec: 'Perfil', q: "Qual é o seu cargo atual?", type: 'text', placeholder: 'ex: Desenvolvedor backend, Product Designer, QA' },
+  { id: 'exp', sec: 'Perfil', g: 'exp', q: "Quantos anos de experiência você tem na área?", opts: [["Menos de 1 ano ou nenhuma", 2], ["1 a 2 anos", 3], ["3 a 5 anos", 13], ["6 a 9 anos", 21], ["10 anos ou mais", 21]] },
+  { id: 'nivel', sec: 'Inglês', g: 'eng', q: "Como você avalia seu inglês hoje?", opts: [["Básico", 2], ["Intermediário", 13], ["Avançado ou superior", 21]] },
+  { id: 'leitura', sec: 'Inglês', g: 'eng', q: "Você precisa ler um artigo em inglês. O que acontece?", opts: [["Abro o tradutor antes de tentar", 2], ["Entendo algumas palavras soltas", 3], ["Textos curtos eu leio tranquilo", 5], ["Leio artigos técnicos da minha área", 8], ["Leio de tudo, até Shakespeare", 13]] },
+  { id: 'escrita', sec: 'Inglês', g: 'eng', q: "Seu chefe pede um email em inglês. Como você faz?", opts: [["Bate o desespero", 2], ["Peço socorro para o ChatGPT", 3], ["Escrevo e reviso com um corretor", 5], ["Escrevo sozinho, sem ferramentas", 8], ["Escrevo tão bem quanto em português", 13]] },
+  { id: 'escuta', sec: 'Inglês', g: 'eng', q: "Você coloca um podcast em inglês. Quanto entende?", opts: [["Quase nada sem legenda", 3], ["Só entendo em velocidade reduzida", 5], ["Entendo, mas volto algumas vezes", 8], ["Entendo uns 80 a 90%", 13], ["Entendo tudo, até sotaques e gírias", 21]] },
+  { id: 'fala', sec: 'Inglês', g: 'eng', q: "Um gestor de fora visita a empresa e puxa conversa com você.", opts: [["Finjo que estou em reunião", 5], ["Travo e torço para alguém me salvar", 8], ["Respondo, mas peço para repetir", 13], ["Explico o que faço e o impacto disso", 21], ["Converso à vontade sobre qualquer assunto", 34]] },
+  { id: 'pedra', sec: 'Processos seletivos', g: 'proc', q: "Hoje, onde você sente que mais trava?", opts: [["Ninguém me encontra, parece que eu não existo", 2], ["Não recebo convites para entrevista", 3], ["Falo com o recrutador e o processo para", 5], ["Vou mal nas entrevistas técnicas", 8], ["Chego na etapa final e não sou escolhido", 13]] },
+  { id: 'passiva', sec: 'Processos seletivos', g: 'proc', q: "Recrutadores te procuram no LinkedIn?", opts: [["Nunca recebi nenhuma mensagem", 2], ["Raramente, a última foi há semanas", 3], ["De vez em quando aparece algo interessante", 5], ["Com frequência, toda semana tem algo", 8], ["Quase todo dia", 13]] },
+  { id: 'ativa', sec: 'Processos seletivos', g: 'proc', q: "Com que frequência você se candidata a vagas?", opts: [["Uma por mês, ou menos", 2], ["Mais ou menos uma por semana", 5], ["Algumas por semana", 8], ["De 3 a 5 por dia", 13], ["Mais de 10 por dia", 21]] },
+  { id: 'convites', sec: 'Processos seletivos', g: 'proc', q: "De cada 10 candidaturas, o que costuma acontecer?", opts: [["Nenhuma resposta ou só recusas", 2], ["Uma entrevista, quando muito", 3], ["2 ou 3 conversas com recrutador", 8], ["Umas 5 entrevistas", 13], ["Mais convites do que consigo atender", 21]] },
+  { id: 'entrevista', sec: 'Processos seletivos', g: 'proc', q: "Como você se sai numa entrevista em inglês?", opts: [["Nunca fiz e prefiro nem pensar", 5], ["Já remarquei por nervosismo", 8], ["Fico nervoso, mas vou até o fim", 13], ["Falo bem da minha experiência", 21], ["Fico tão à vontade quanto em português", 34]] },
+  { id: 'regime', sec: 'Momento atual', q: "Como é o seu regime de trabalho hoje?", opts: [["100% remoto"], ["Remoto, vou ao escritório quando quero"], ["Presencial 2 a 3x por semana"], ["100% presencial"], ["Não estou trabalhando no momento"]] },
+  { id: 'renda', sec: 'Momento atual', q: "Qual é a sua renda mensal hoje?", opts: [["Menos de R$ 2.500"], ["R$ 2.500 a R$ 5.000"], ["R$ 5.000 a R$ 10.000"], ["R$ 10.000 a R$ 20.000"], ["Mais de R$ 20.000"]] },
+  { id: 'satisfacao', sec: 'Momento atual', q: "Como você se sente em relação à sua renda?", opts: [["Preocupado, sem perspectiva"], ["Mal dá para pagar as contas"], ["Dá para viver, mas pizza só uma vez por mês"], ["Satisfeito, mas quero ganhar mais"], ["Totalmente satisfeito"]] },
+  { id: 'alvo', sec: 'Objetivo', q: "Que renda mensal você quer alcançar?", help: 'Valores convertidos para reais.', opts: [["Até R$ 5.000"], ["R$ 5.000 a R$ 10.000"], ["R$ 10.000 a R$ 20.000"], ["R$ 20.000 a R$ 30.000"], ["Mais de R$ 30.000"]] },
+  { id: 'plano', sec: 'Objetivo', q: "Como você quer trabalhar para fora?", opts: [["Morando no Brasil, em empresa de fora"], ["Me mudando para outro país"]] }
+];
+const MAX = { exp: 21, eng: 102, proc: 102 };
+const QUANT = [0.13,0.276,0.329,0.37,0.409,0.44,0.468,0.491,0.51,0.533,0.552,0.572,0.595,0.614,0.637,0.657,0.68,0.706,0.742,0.788,1];
+const KEYS = ['A','B','C','D','E','F','G','H'];
+const SKILLS = {
+  leitura: ['Leitura em inglês', 'Troque um conteúdo por dia em português pela versão em inglês: documentação, artigos ou newsletters da sua área. Ler um pouco todo dia rende mais que ler muito de vez em quando.'],
+  escrita: ['Escrita em inglês', 'Escreva suas mensagens de trabalho direto em inglês e use o corretor só para revisar no final. A meta é parar de escrever em português e traduzir.'],
+  escuta: ['Compreensão auditiva', 'Ouça podcasts e palestras da sua área em velocidade normal, com a transcrição aberta. Quando estiver entendendo uns 80%, tire a transcrição.'],
+  fala: ['Inglês falado', 'Grave suas respostas para as perguntas que sempre caem (Tell me about yourself, um projeto difícil, por que quer mudar) e ouça de volta. Seu inglês não precisa ser perfeito. Precisa funcionar sob pressão.'],
+  passiva: ['Visibilidade no LinkedIn', 'Escreva seu título e sua headline em inglês, com o nome do cargo igual ao das vagas de fora e as palavras-chave da sua área. É assim que o recrutador te encontra na busca.'],
+  ativa: ['Volume de candidaturas', 'Defina quantas vagas bem escolhidas você vai aplicar por semana e anote numa planilha. Com poucas candidaturas, você não tem como saber o que ajustar.'],
+  convites: ['Conversão em entrevistas', 'Se você aplica e não é chamado, o currículo está te barrando. Reescreva cada bullet como resultado: o que mudou, quanto mudou e para quem.'],
+  entrevista: ['Entrevista em inglês', 'Escolha 5 histórias da sua carreira, escreva cada uma em inglês e treine em voz alta até contar sem ler. Quanto mais preparo, menos improviso.']
+};
+const SUBS_ENG = [['leitura','Leitura'],['escrita','Escrita'],['escuta','Escuta'],['fala','Fala']];
+const BLOCKS = [
+  ['Os recrutadores não estão te encontrando.', 'Antes de aplicar mais, você precisa ser encontrado. Comece pelo LinkedIn: título, headline e palavras-chave em inglês, do jeito que aparecem nas vagas de fora. E o currículo precisa contar a mesma história.'],
+  ['Suas candidaturas param na triagem.', 'Quando ninguém chama, o problema quase sempre está no currículo: tarefas em vez de resultados, um cargo que não bate com o mercado de fora, ou currículo e LinkedIn dizendo coisas diferentes.'],
+  ['O processo para depois da primeira conversa.', 'Essa conversa é um filtro. O que pesa é uma apresentação clara de quem você é, uma pretensão salarial bem pensada e um follow-up que mantém o processo andando.'],
+  ['As entrevistas técnicas estão te segurando.', 'Lá fora, o entrevistador quer ver como você pensa, não só a resposta certa. Treine resolver problemas explicando seu raciocínio em voz alta, em inglês.'],
+  ['Você chega na final e não fecha.', 'Na final, todo mundo sabe a parte técnica. Ganha quem mostra impacto com números, combina com o time e conversa sobre proposta com segurança.']
+];
+const DIMTXT = {
+  exp: [[0.5, 'Você ainda tem pouco tempo na área, e as vagas de fora costumam pedir nível pleno para cima. Use esse tempo para ganhar experiência e preparar o inglês ao mesmo tempo.'], [2, 'Sua experiência já compete com o mercado de fora. O trabalho agora é fazer o currículo e a entrevista mostrarem isso.']],
+  eng: [[0.4, 'Hoje o inglês é o que mais te segura. Antes de aplicar em volume, leia e ouça inglês todo dia, nem que seja por 20 minutos.'], [0.7, 'Você se vira no inglês, mas trava quando tem pressão. O próximo passo é treinar fala, principalmente respostas de entrevista.'], [2, 'Seu inglês já funciona. Use isso a seu favor, porque ele vira ponto forte nas entrevistas.']],
+  proc: [[0.35, 'Seu processo ainda não gera entrevistas. É aqui que você tem mais a ganhar.'], [0.6, 'Você já consegue algumas conversas, mas perde no meio do caminho. Ajustar o posicionamento e preparar as entrevistas faz diferença aqui.'], [2, 'Seu processo já funciona. O foco agora é transformar etapas finais em propostas.']]
+};
+const DEMO = {
+  baixo: { area: 0, funcao: 'Analista de suporte', exp: 1, nivel: 0, leitura: 1, escrita: 1, escuta: 0, fala: 1, pedra: 0, passiva: 0, ativa: 0, convites: 0, entrevista: 0, regime: 3, renda: 1, satisfacao: 1, alvo: 1, plano: 0 },
+  medio: { area: 0, funcao: 'Desenvolvedor backend', exp: 2, nivel: 1, leitura: 3, escrita: 2, escuta: 3, fala: 2, pedra: 1, passiva: 2, ativa: 1, convites: 1, entrevista: 2, regime: 0, renda: 2, satisfacao: 3, alvo: 2, plano: 0 },
+  alto: { area: 2, funcao: 'Product Designer', exp: 4, nivel: 2, leitura: 4, escrita: 3, escuta: 4, fala: 3, pedra: 4, passiva: 3, ativa: 3, convites: 2, entrevista: 3, regime: 0, renda: 3, satisfacao: 3, alvo: 3, plano: 1 }
+};
+
+class Component extends DCLogic {
+  state = { step: 'intro', qi: 0, answers: {}, text: '', lead: { nome: '', email: '', whats: '', consent: false }, err: {}, sending: false };
+
+  componentDidMount() {
+    this.applyStart();
+    this._key = (e) => {
+      if (this.state.step !== 'quiz') return;
+      const t = e.target && e.target.tagName;
+      if (t === 'INPUT' || t === 'TEXTAREA') return;
+      const q = Q[this.state.qi];
+      if (q.type === 'text') return;
+      let idx = KEYS.indexOf(e.key.toUpperCase());
+      if (idx < 0 && /^[1-9]$/.test(e.key)) idx = +e.key - 1;
+      if (idx >= 0 && idx < q.opts.length) this.pick(idx);
+    };
+    window.addEventListener('keydown', this._key);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this._key); }
+  componentDidUpdate(prev) {
+    if (prev.startAt !== this.props.startAt || prev.demoProfile !== this.props.demoProfile) this.applyStart();
+  }
+  applyStart() {
+    const s = this.props.startAt ?? 'intro';
+    const demo = DEMO[this.props.demoProfile ?? 'medio'];
+    if (s === 'intro') this.setState({ step: 'intro', qi: 0 });
+    else if (s === 'quiz') this.setState({ step: 'quiz', qi: 0 });
+    else this.setState({ step: s, answers: { ...demo }, lead: s === 'resultado' ? { nome: 'Ana', email: 'ana@email.com', whats: '(11) 91234-5678', consent: true } : this.state.lead });
+  }
+  go(patch) { this.setState(patch); try { window.scrollTo({ top: 0 }); } catch (e) {} }
+
+  pick(idx) {
+    const q = Q[this.state.qi];
+    this.setState(s => ({ answers: { ...s.answers, [q.id]: idx } }));
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.next(), 220);
+  }
+  next() {
+    const qi = this.state.qi;
+    if (qi >= Q.length - 1) return this.go({ step: 'captura' });
+    const nq = Q[qi + 1];
+    this.go({ qi: qi + 1, text: nq.type === 'text' ? (this.state.answers[nq.id] || '') : this.state.text });
+  }
+  back() {
+    const { step, qi } = this.state;
+    if (step === 'captura') return this.go({ step: 'quiz', qi: Q.length - 1 });
+    if (qi === 0) return this.go({ step: 'intro' });
+    const pq = Q[qi - 1];
+    this.go({ qi: qi - 1, text: pq.type === 'text' ? (this.state.answers[pq.id] || '') : this.state.text });
+  }
+
+  compute(a) {
+    const sum = { exp: 0, eng: 0, proc: 0 }, ratio = {};
+    Q.forEach(q => {
+      if (!q.g) return;
+      const i = a[q.id];
+      const pts = i == null ? 0 : q.opts[i][1];
+      const mx = Math.max(...q.opts.map(o => o[1]));
+      sum[q.g] += pts; ratio[q.id] = pts / mx;
+    });
+    const n = { exp: Math.min(1, sum.exp / MAX.exp), eng: Math.min(1, sum.eng / MAX.eng), proc: Math.min(1, sum.proc / MAX.proc) };
+    const total = (n.exp + n.eng + n.proc) / 3;
+    return { n, ratio, total };
+  }
+  percentile(v) {
+    if (v <= QUANT[0]) return 1;
+    for (let i = 1; i < QUANT.length; i++) {
+      if (v <= QUANT[i]) { const f = (v - QUANT[i - 1]) / (QUANT[i] - QUANT[i - 1]); return Math.max(1, Math.min(99, Math.round((i - 1 + f) * 5))); }
+    }
+    return 99;
+  }
+
+  submitLead(e) {
+    e.preventDefault();
+    const l = this.state.lead;
+    const digits = l.whats.replace(/\D/g, '');
+    const err = {
+      nome: l.nome.trim().length < 2,
+      email: !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(l.email.trim()),
+      whats: digits.length < 10 || digits.length > 13,
+      consent: !l.consent
+    };
+    this.setState({ err });
+    if (Object.values(err).some(Boolean)) return;
+    const { n, total } = this.compute(this.state.answers);
+    const answers = {};
+    Q.forEach(q => { const v = this.state.answers[q.id]; answers[q.id] = q.type === 'text' ? v : (v == null ? null : q.opts[v][0]); });
+    const payload = { ...l, whatsapp: digits, answers, score: Math.round(total * 100), scoreExperiencia: Math.round(n.exp * 100), scoreIngles: Math.round(n.eng * 100), scoreProcessos: Math.round(n.proc * 100), createdAt: new Date().toISOString() };
+    try { (window.dataLayer = window.dataLayer || []).push({ event: 'quiz_lead', score: payload.score }); } catch (x) {}
+    const url = this.props.webhookUrl;
+    if (url) {
+      this.setState({ sending: true });
+      fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+        .catch(() => {}).finally(() => { this.setState({ sending: false }); this.go({ step: 'resultado' }); });
+    } else this.go({ step: 'resultado' });
+  }
+
+  result() {
+    const a = this.state.answers;
+    const { n, ratio, total } = this.compute(a);
+    const score = Math.round(total * 100);
+    const pick = (arr, v) => arr.find(x => v < x[0])[1];
+    const tier = score < 45 ? 0 : score < 65 ? 1 : 2;
+    const TIERS = [
+      ['Primeiros passos', 'Você está montando a base. Antes de sair aplicando, vale entender o caminho inteiro, para não gastar energia no lugar errado.'],
+      ['Em construção', 'A base você já tem. O que falta é um jeito organizado de executar toda semana, sem depender de improviso.'],
+      ['Pronto para acelerar', 'Você já tem boa parte do que as empresas de fora pedem. Agora o que mais pesa é treinar com feedback nos pontos onde ainda trava.']
+    ];
+    const u = (k, d) => this.props[k] || d;
+    const CTAS = [
+      { title: 'Comunidade Trampar na Gringa', text: 'Para entender o caminho inteiro com calma e trocar experiências com quem está no mesmo processo.', bullets: ['Guias de Carreira com o passo a passo de cada tema', 'Networking com profissionais brasileiros que também miram a gringa', 'Eventos ao vivo de vez em quando'], button: 'Entrar na comunidade', url: u('ctaUrlComunidade', '#comunidade') },
+      { title: 'TNG Premium', text: 'Para quem já sabe o que precisa fazer e quer ferramentas prontas para executar sozinho.', bullets: ['Caixa de Ferramentas com kits de mensagens, bancos de respostas, roteiros e checklists', 'Prompts e assistentes de IA prontos para cada etapa', 'Cursos em vídeo, incluindo o CV+'], button: 'Conhecer o Premium', url: u('ctaUrlPremium', '#premium') },
+      { title: 'Programa de Carreira Internacional', text: 'Mentoria para quem já sabe onde trava e precisa de prática e feedback para destravar.', bullets: ['Acompanhamento de 12 meses', 'Encontros em inglês com simulação de entrevista', 'Feedback direto no seu currículo, LinkedIn e entrevistas'], button: 'Falar com o time no WhatsApp', url: u('ctaUrlMentoria', '#mentoria') }
+    ];
+    const pct = (x) => Math.round(x * 100);
+    const subs = SUBS_ENG.map(([id, label]) => {
+      const p = pct(ratio[id] || 0);
+      return { label, pct: p, bg: p < 40 ? '#2A2F2B' : p < 70 ? '#430049' : '#C9F23D', fg: p < 70 ? '#F2EEDC' : '#141414' };
+    });
+    const dims = [
+      { label: 'Experiência', pct: pct(n.exp), text: pick(DIMTXT.exp, n.exp), hasSubs: false, subs: [] },
+      { label: 'Inglês', pct: pct(n.eng), text: pick(DIMTXT.eng, n.eng), hasSubs: true, subs },
+      { label: 'Processos seletivos', pct: pct(n.proc), text: pick(DIMTXT.proc, n.proc), hasSubs: false, subs: [] }
+    ];
+    const priorities = Object.keys(SKILLS)
+      .map(id => ({ id, r: ratio[id] ?? 0 }))
+      .sort((x, y) => x.r - y.r)
+      .slice(0, 3)
+      .map((p, i) => ({ n: String(i + 1).padStart(2, '0'), title: SKILLS[p.id][0], text: SKILLS[p.id][1] }));
+    const block = BLOCKS[a.pedra ?? 1];
+    const lab = (id) => { const q = Q.find(x => x.id === id); const v = a[id]; return v == null ? '—' : q.opts[v][0]; };
+    const nome = (this.state.lead.nome || '').trim().split(' ')[0];
+    const medianScore = Math.round(QUANT[10] * 100);
+    return {
+      score, tierName: TIERS[tier][0], tierText: TIERS[tier][1],
+      greeting: nome ? nome + '.' : '',
+      percentile: this.percentile(total), median: medianScore, medianPos: medianScore,
+      dims, priorities, blockTitle: block[0], blockText: block[1],
+      today: [lab('renda'), lab('regime')].join(' · '),
+      goal: [lab('alvo'), lab('plano')].join(' · '),
+      cta: CTAS[tier]
+    };
+  }
+
+  renderVals() {
+    const { step, qi, answers, text, lead, err, sending } = this.state;
+    const q = Q[qi];
+    const sel = answers[q.id];
+    const secQs = Q.filter(x => x.sec === q.sec);
+    const isChoice = q.type !== 'text';
+    const options = isChoice ? q.opts.map((o, i) => {
+      const on = sel === i;
+      return { label: o[0], key: KEYS[i], pick: () => this.pick(i), bg: on ? '#430049' : '#181C19', fg: '#F2EEDC', border: on ? '#C9F23D' : '#2A2F2B', keyBg: on ? '#C9F23D' : '#2A2F2B', keyFg: on ? '#141414' : '#B7B1A0' };
+    }) : [];
+    const setLead = (k, fn) => (e) => { const v = fn ? fn(e) : e.target.value; this.setState(s => ({ lead: { ...s.lead, [k]: v }, err: { ...s.err, [k]: false } })); };
+    const maskWhats = (e) => {
+      const d = e.target.value.replace(/\D/g, '').slice(0, 11);
+      if (d.length <= 2) return d.length ? '(' + d : '';
+      if (d.length <= 6) return '(' + d.slice(0, 2) + ') ' + d.slice(2);
+      if (d.length <= 10) return '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6);
+      return '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
+    };
+    const bc = (bad) => bad ? '#F08A6E' : '#2A2F2B';
+    return {
+      isIntro: step === 'intro', isQuiz: step === 'quiz', isCapture: step === 'captura', isResult: step === 'resultado',
+      total: Q.length,
+      progressPct: Math.round(((qi + (sel != null ? 1 : 0)) / Q.length) * 100),
+      q: {
+        num: qi + 1, sec: q.sec, secStep: (secQs.indexOf(q) + 1) + ' de ' + secQs.length, q: q.q,
+        hasHelp: !!q.help, help: q.help || '', isChoice, isText: !isChoice, placeholder: q.placeholder || '',
+        options, minCol: q.opts && q.opts.length > 5 ? '240px' : '100%',
+        keyHint: 'A–' + (isChoice ? KEYS[q.opts.length - 1] : '')
+      },
+      textVal: text,
+      textEmpty: !text.trim(),
+      textOpacity: text.trim() ? 1 : 0.4,
+      onText: (e) => this.setState({ text: e.target.value }),
+      submitText: (e) => { e.preventDefault(); if (!text.trim()) return; this.setState(s => ({ answers: { ...s.answers, [q.id]: text.trim() } })); this.next(); },
+      start: () => this.go({ step: 'quiz', qi: 0 }),
+      back: () => this.back(),
+      restart: () => this.go({ step: 'intro', qi: 0, answers: {}, text: '' }),
+      lead, privacyUrl: this.props.privacyUrl || '#privacidade',
+      err: { ...err, nomeBorder: bc(err.nome), emailBorder: bc(err.email), whatsBorder: bc(err.whats) },
+      onNome: setLead('nome'), onEmail: setLead('email'), onWhats: setLead('whats', maskWhats),
+      onConsent: setLead('consent', (e) => e.target.checked),
+      submitLead: (e) => this.submitLead(e),
+      submitLabel: sending ? 'Calculando…' : 'Ver minhas chances →',
+      r: step === 'resultado' ? this.result() : { dims: [], priorities: [], cta: { bullets: [] } }
+    };
+  }
+}
+</script>
+</body>
+</html>
