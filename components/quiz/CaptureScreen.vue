@@ -18,8 +18,8 @@
       <DsField label="Email" :error="err.email ? 'Confere o email, parece que tem algo errado.' : ''">
         <DsInput v-model="lead.email" type="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" :error="err.email" @update:model-value="err.email = false" />
       </DsField>
-      <DsField label="WhatsApp" :error="err.whats ? 'Coloca o número com DDD.' : ''">
-        <DsInput :model-value="lead.whats" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 91234-5678" :error="err.whats" @update:model-value="onWhats" />
+      <DsField label="WhatsApp" :error="err.whats ? 'Coloca o número com DDD. Se for de fora do Brasil, com o código do país.' : ''">
+        <DsInput v-model="lead.whats" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 91234-5678 ou +351 912 345 678" maxlength="25" :error="err.whats" @update:model-value="err.whats = false" />
       </DsField>
       <DsStack :gap="1">
         <DsCheckbox v-model="lead.consent" :error="err.consent" @update:model-value="err.consent = false">
@@ -45,21 +45,10 @@ const emit = defineEmits<{ submit: [lead: Lead], back: [] }>()
 const lead = reactive<Lead>({ nome: '', email: '', whats: '', consent: false })
 const err = reactive({ nome: false, email: false, whats: false, consent: false })
 
-// Máscara BR: (DD) NNNN-NNNN ou (DD) NNNNN-NNNN, até 11 dígitos.
-function onWhats(value: string) {
-  err.whats = false
-  const d = value.replace(/\D/g, '').slice(0, 11)
-  if (d.length <= 2) lead.whats = d.length ? `(${d}` : ''
-  else if (d.length <= 6) lead.whats = `(${d.slice(0, 2)}) ${d.slice(2)}`
-  else if (d.length <= 10) lead.whats = `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`
-  else lead.whats = `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`
-}
-
 function submit() {
-  const digits = lead.whats.replace(/\D/g, '')
   err.nome = lead.nome.trim().length < 2
   err.email = !EMAIL_RE.test(lead.email.trim())
-  err.whats = digits.length < 10 || digits.length > 13
+  err.whats = !normalizeWhatsapp(lead.whats)
   err.consent = !lead.consent
   if (Object.values(err).some(Boolean)) return
   emit('submit', { ...lead })

@@ -119,7 +119,7 @@ export function useQuiz() {
         body: {
           nome: lead.nome.trim(),
           email: lead.email.trim(),
-          whatsapp: lead.whats.replace(/\D/g, ''),
+          whatsapp: lead.whats,
           consent: lead.consent,
           consentVersion: CONSENT_VERSION,
           answers: answers.value,

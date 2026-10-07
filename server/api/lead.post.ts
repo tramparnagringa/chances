@@ -2,7 +2,7 @@
 // A nota é recalculada no servidor a partir das respostas: o Kit nunca
 // recebe uma nota mandada pelo cliente.
 import { answerLabel, computeScores, isValidAnswer, QUESTIONS, tierIndex, TIERS, type Answers } from '#shared/utils/scoring'
-import { EMAIL_RE } from '#shared/utils/validation'
+import { EMAIL_RE, normalizeWhatsapp } from '#shared/utils/validation'
 
 
 interface LeadBody {
@@ -100,11 +100,11 @@ function validate(body: LeadBody | undefined) {
   if (!body || typeof body !== 'object') return null
   const nome = typeof body.nome === 'string' ? body.nome.trim().slice(0, 100) : ''
   const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : ''
-  const whatsapp = typeof body.whatsapp === 'string' ? body.whatsapp.replace(/\D/g, '') : ''
+  const whatsapp = typeof body.whatsapp === 'string' ? normalizeWhatsapp(body.whatsapp) : null
 
   if (nome.length < 2) return null
   if (email.length > 254 || !EMAIL_RE.test(email)) return null
-  if (whatsapp.length < 10 || whatsapp.length > 13) return null
+  if (!whatsapp) return null
   // LGPD: nada vai pro Kit sem aceite explícito.
   if (body.consent !== true) return null
 

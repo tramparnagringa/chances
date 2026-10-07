@@ -98,7 +98,7 @@ Qualquer mudança de pontuação ou de copy começa no JSON, nunca no componente
 - Clicar numa opção marca e avança sozinho após 220ms. Teclas A–H ou 1–9 escolhem (ignorar com foco em input).
 - Pergunta 2 é texto livre: botão desabilitado com campo vazio; Enter envia.
 - `window.scrollTo(0,0)` a cada troca de tela.
-- Máscara de WhatsApp BR enquanto digita; válido com 10 a 13 dígitos.
+- WhatsApp **sem máscara** e de qualquer país (decisão do Adal, 2026-10-07). `normalizeWhatsapp()` em `shared/utils/validation.ts` valida e grava em E.164: com `+`/`00` mantém o código do país; sem código e com 10–11 dígitos assume Brasil (+55).
 - Erros da captura só aparecem ao enviar e somem quando o campo é editado.
 - **O resultado aparece mesmo se o envio ao Kit falhar.** Registre o erro, não bloqueie a pessoa.
 - Ao enviar: `dataLayer.push({ event: 'quiz_lead', score, faixa })`.
