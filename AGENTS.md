@@ -24,7 +24,7 @@ O protótipo é referência de design, não código para copiar. A fidelidade é
 
 Espelha `~/Work/tramparnagringa.com.br` (site principal), com uma diferença: **sem `@nuxt/content` e sem banco de dados**.
 
-- Nuxt 4 (Vue 3, Composition API, `<script setup lang="ts">`), Node 20 (`.nvmrc`), **npm** (nunca yarn/pnpm).
+- Nuxt 4 (Vue 3, Composition API, `<script setup lang="ts">`), Node 24 (`.nvmrc`; a Vercel exige 24.x), **npm** (nunca yarn/pnpm).
 - Tailwind CSS via `@nuxtjs/tailwindcss`, **confinado a `components/ds/**`** (mesma regra do site principal, ver abaixo).
 - Tokens de marca em CSS custom properties (`assets/styles/tokens/*.css`), expostos como aliases semânticos no `tailwind.config.ts`.
 - Deploy na **Vercel** (preset detectado automaticamente pelo Nitro). `/` e `/roadmap/*` são pré-renderizados; só `/api/lead` roda como função.
