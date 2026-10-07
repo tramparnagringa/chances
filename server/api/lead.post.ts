@@ -5,6 +5,29 @@ import { answerLabel, computeScores, isValidAnswer, QUESTIONS, tierIndex, TIERS,
 import { EMAIL_RE, normalizeWhatsapp } from '#shared/utils/validation'
 
 
+// Campos do Kit criados pelo quiz antigo (TNG Score), reaproveitados aqui.
+// Grava o rótulo da opção escolhida (ou o texto livre, no cargo).
+const KIT_FIELD_BY_QUESTION: Record<string, string> = {
+  area: 'area',
+  funcao: 'current_situation_role',
+  exp: 'current_situation_experience_years',
+  nivel: 'english_level',
+  leitura: 'english_reading',
+  escrita: 'english_writing',
+  escuta: 'english_listening',
+  fala: 'english_speaking',
+  pedra: 'hiring_status',
+  passiva: 'hiring_optimized_profile',
+  ativa: 'hiring_search_attitude',
+  convites: 'hiring_interview_invites',
+  entrevista: 'hiring_interview_performance',
+  regime: 'current_situation_regime',
+  renda: 'current_situation_compensation',
+  satisfacao: 'current_situation_self_evaluation',
+  alvo: 'goal_compensation',
+  plano: 'goal_working_type',
+}
+
 interface LeadBody {
   nome?: unknown
   email?: unknown
@@ -31,20 +54,17 @@ export default defineEventHandler(async (event) => {
 
   const fields: Record<string, string> = {
     whatsapp: lead.whatsapp,
-    tng_score: String(score),
+    tng_score_total: String(score),
+    tng_score_experience: String(Math.round(pillars.exp * 100)),
+    tng_score_english: String(Math.round(pillars.eng * 100)),
+    tng_score_hiring: String(Math.round(pillars.proc * 100)),
     tng_faixa: TIERS[tier]!.name,
-    score_experiencia: String(Math.round(pillars.exp * 100)),
-    score_ingles: String(Math.round(pillars.eng * 100)),
-    score_processos: String(Math.round(pillars.proc * 100)),
-    area: answerLabel(a, 'area'),
-    cargo: answerLabel(a, 'funcao'),
-    trava_principal: answerLabel(a, 'pedra'),
-    renda_atual: answerLabel(a, 'renda'),
-    renda_meta: answerLabel(a, 'alvo'),
-    plano: answerLabel(a, 'plano'),
     lgpd_consent_at: new Date().toISOString(),
     lgpd_consent_versao: lead.consentVersion,
   }
+  // Uma resposta por campo, nos campos que o quiz antigo já usava no Kit.
+  for (const [questionId, fieldKey] of Object.entries(KIT_FIELD_BY_QUESTION))
+    fields[fieldKey] = answerLabel(a, questionId)
 
   const config = useRuntimeConfig(event)
   const tagId = [config.kitTagFaixa1, config.kitTagFaixa2, config.kitTagFaixa3][tier]

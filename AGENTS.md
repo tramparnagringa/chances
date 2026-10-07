@@ -118,13 +118,13 @@ Qualquer mudança de pontuação ou de copy começa no JSON, nunca no componente
 3. `POST /v4/forms/{NUXT_KIT_FORM_ID}/subscribers` com `referrer` (o Kit extrai as UTMs).
 4. `POST /v4/tags/{tag da faixa}/subscribers`: a automação dessa tag manda o roadmap certo.
 
-Custom fields (precisam existir na conta do Kit; campo desconhecido é ignorado): `whatsapp`, `tng_score`, `tng_faixa`, `score_experiencia`, `score_ingles`, `score_processos`, `area`, `cargo`, `trava_principal`, `renda_atual`, `renda_meta`, `plano`, `lgpd_consent_at`, `lgpd_consent_versao`.
+Custom fields: **reaproveita os do quiz antigo (TNG Score)**, um por pergunta, mapeados em `KIT_FIELD_BY_QUESTION` no endpoint: `area`, `current_situation_role` (cargo), `current_situation_experience_years`, `english_level`, `english_reading/writing/listening/speaking`, `hiring_status` ("onde você trava"), `hiring_optimized_profile`, `hiring_search_attitude`, `hiring_interview_invites`, `hiring_interview_performance`, `current_situation_regime`, `current_situation_compensation`, `current_situation_self_evaluation`, `goal_compensation`, `goal_working_type`. Notas 0–100 em `tng_score_total`, `tng_score_experience`, `tng_score_english`, `tng_score_hiring`. Novos (sem equivalente antigo): `whatsapp` (E.164), `tng_faixa`, `lgpd_consent_at`, `lgpd_consent_versao`. As respostas vão como rótulo da opção; se o quiz antigo gravava outro formato (código, pontos), os dois convivem no mesmo campo.
 
 - Sem `NUXT_KIT_*` configurado (dev), o endpoint valida, loga e responde `{ ok: true, kit: 'skipped' }`.
 - Falha no Kit: loga e responde 502. O cliente ignora e mostra o resultado mesmo assim.
 - IDs no Kit: formulário `6613793`; tags `24372850` [QUIZ CHANCES] Primeiros passos, `24372851` Em construção, `24372852` Pronto para acelerar.
 - Como o formulário é o da newsletter, o lead do quiz também entra no que estiver ligado a ele (sequência, automações). Se esse formulário tiver double opt-in, a API dispara o email de confirmação.
-- O campo `area` já existia (quiz antigo) e é reaproveitado. Os demais campos do quiz antigo (`tng_score_total` etc.) não são usados.
+- Campos criados por engano em 2026-10-07 e sem uso (podem ser apagados no Kit): `tng_score`, `score_experiencia`, `score_ingles`, `score_processos`, `cargo`, `trava_principal`, `renda_atual`, `renda_meta`, `plano`.
 - `CONSENT_VERSION` em `composables/useQuiz.ts`: mudou o texto do checkbox LGPD, mude a versão.
 - `NUXT_KIT_API_BASE` existe só para apontar para um mock em teste local.
 
